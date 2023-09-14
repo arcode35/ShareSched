@@ -1,5 +1,6 @@
 # ShareSched 📅
-Have you ever felt overwhelmed by all the syllabi being thrown at you the first week of classes? Do you hate having to go through 10 pages of a syllabus to find the information that really matters? SyllaBye allows you to upload pdfs of your syllabi and extracts the key information found in every syllabus. From grade information to how many tests, SyllaBye allows you to know what you need to know without all the other fluff! Say goodbye to syllabi and hello to SyllaBye.
+Have you ever wanted to compare schedules with a friend but found it too tedious to compare every little time, professor, and location? ShareSched is an app that allows you to upload a picture of a schedule and extract the key details from it. ShareSched can also find similarities in your schedule and your friend’s whether it’s location, professor, class section, or more! ScareSched is the app you need when schedule planning time comes up.
+
 
 ## MVP
 
