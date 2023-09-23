@@ -133,7 +133,7 @@ Meet team, decide frontend/backend teams, set up development environment, finali
 **Developers:**
 - Noel Emmanuel the coolest
 - Nadeeba Atiqui
-- Aldrin Roshan 
+- Aldrin Roshan the aim bot
 - Faizan Kalam
 
 **Industry Mentor:**
@@ -141,5 +141,3 @@ Meet team, decide frontend/backend teams, set up development environment, finali
 
 **Project Manager:**
 - Karina Batra
-
-testing - aldrin
