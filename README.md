@@ -132,7 +132,7 @@ Meet team, decide frontend/backend teams, set up development environment, finali
 ## Team ShareSched
 **Developers:**
 - Noel Emmanuel the coolest
-- Nadeeba Atiqui
+- Nadeeba Atiqui the best
 - Aldrin Roshan
 - Faizan Kalam
 
@@ -141,3 +141,4 @@ Meet team, decide frontend/backend teams, set up development environment, finali
 
 **Project Manager:**
 - Karina Batra
+
