@@ -131,7 +131,7 @@ Meet team, decide frontend/backend teams, set up development environment, finali
 
 ## Team ShareSched
 **Developers:**
-- Noel Emmanuel
+- Noel Emmanuel the coolest
 - Nadeeba Atiqui
 - Aldrin Roshan
 - Faizan Kalam
