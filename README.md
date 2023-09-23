@@ -133,7 +133,7 @@ Meet team, decide frontend/backend teams, set up development environment, finali
 **Developers:**
 - Noel Emmanuel the coolest
 - Nadeeba Atiqui the best
-- Aldrin Roshan
+- Aldrin Roshan the aim bot
 - Faizan Kalam
 
 **Industry Mentor:**
