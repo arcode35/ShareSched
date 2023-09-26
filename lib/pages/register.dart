@@ -60,7 +60,7 @@ class RegisterForm extends StatefulWidget {
 }
 
 class _RegisterFormState extends State<RegisterForm> {
-  final AuthService _auth = AuthService();
+  //final AuthService _auth = AuthService();
   String email = '';
   String password = '';
 
