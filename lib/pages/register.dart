@@ -35,11 +35,13 @@ class RegisterForm extends StatelessWidget {
           child: Column(
             children: [
               EmailField(),
-              SizedBox(height: 30),
+              SizedBox(height: 20),
+              UsernameField(),
+              SizedBox(height: 20),
               PasswordField(),
               SizedBox(height: 10),
               ConfirmPasswordField(),
-              SizedBox(height: 10),
+              SizedBox(height: 20),
               SignUpButton(),
             ],
           ),
@@ -75,6 +77,32 @@ class EmailField extends StatelessWidget {
   }
 }
 
+class UsernameField extends StatelessWidget {
+  const UsernameField({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 35),
+      child: TextFormField(
+        keyboardType: TextInputType.emailAddress,
+        decoration: InputDecoration(
+          labelText: "Username",
+          hintText: 'Enter username',
+          hintStyle: GoogleFonts.montserrat(),
+          labelStyle: GoogleFonts.montserrat(),
+          prefixIcon: const Icon(Icons.person),
+          border: const OutlineInputBorder(),
+        ),
+        onChanged: (String Value) {},
+        validator: (value) {
+          return value!.isEmpty ? 'Please Enter Username' : null;
+        },
+      ),
+    );
+  }
+}
+
 class PasswordField extends StatelessWidget {
   const PasswordField({super.key});
 
@@ -83,6 +111,7 @@ class PasswordField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 35),
       child: TextFormField(
+        obscureText: true,
         keyboardType: TextInputType.visiblePassword,
         decoration: InputDecoration(
           labelText: "Password",
@@ -109,6 +138,7 @@ class ConfirmPasswordField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 35),
       child: TextFormField(
+        obscureText: true,
         keyboardType: TextInputType.visiblePassword,
         decoration: InputDecoration(
           labelText: "Confirm Password",

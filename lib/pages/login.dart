@@ -93,6 +93,7 @@ class PasswordField extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 35),
       child: TextFormField(
         keyboardType: TextInputType.visiblePassword,
+        obscureText: true,
         decoration: InputDecoration(
           labelText: "Password",
           hintText: 'Enter password',
@@ -120,7 +121,7 @@ class CreateAccountButton extends StatelessWidget {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => RegisterScreen()),
+            MaterialPageRoute(builder: (context) => const RegisterScreen()),
           );
         },
         child: Text('Create an account', style: GoogleFonts.montserrat()),
