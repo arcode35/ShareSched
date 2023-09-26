@@ -68,11 +68,11 @@ class EmailField extends StatelessWidget {
       child: TextFormField(
         keyboardType: TextInputType.emailAddress,
         decoration: InputDecoration(
-          labelText: "Email",
-          hintText: 'Enter email',
+          labelText: "Email / User",
+          hintText: 'Enter email / user',
           hintStyle: GoogleFonts.montserrat(),
           labelStyle: GoogleFonts.montserrat(),
-          prefixIcon: const Icon(Icons.email),
+          prefixIcon: const Icon(Icons.person),
           border: const OutlineInputBorder(),
         ),
         onChanged: (String Value) {},
