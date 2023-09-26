@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'custom_widgets.dart';
 
 class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
