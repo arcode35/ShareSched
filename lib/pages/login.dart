@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'custom_widgets.dart';
+import 'home.dart';
 import 'register.dart';
 
 class MyApp extends StatefulWidget {
@@ -131,18 +132,30 @@ class CreateAccountButton extends StatelessWidget {
 }
 
 class LoginButton extends StatelessWidget {
-  const LoginButton({super.key});
+  const LoginButton({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 100),
       child: MaterialButton(
         minWidth: double.infinity,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const HomePage()),
+          );
+        },
         color: Colors.black,
         textColor: Colors.white,
-        child: Text('Log In',
-            style: GoogleFonts.exo(fontSize: 20, color: Colors.white)),
+        child: Text(
+          'Log In',
+          style: GoogleFonts.exo(fontSize: 20, color: Colors.white),
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(
+              30.0), // Adjust the value to make it more or less rounded
+          side: BorderSide(color: Colors.black),
+        ),
       ),
     );
   }

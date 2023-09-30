@@ -162,15 +162,19 @@ class SignUpButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 100),
-      child: MaterialButton(
-        minWidth: double.infinity,
-        onPressed: () {},
-        color: Colors.black,
-        textColor: Colors.white,
-        child: Text('Sign Up',
-            style: GoogleFonts.exo(fontSize: 20, color: Colors.white)),
-      ),
-    );
+        padding: const EdgeInsets.symmetric(horizontal: 100),
+        child: MaterialButton(
+          minWidth: double.infinity,
+          onPressed: () {},
+          color: Colors.black,
+          textColor: Colors.white,
+          child: Text('Sign Up',
+              style: GoogleFonts.exo(fontSize: 20, color: Colors.white)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(
+                30.0), // Adjust the value to make it more or less rounded
+            side: BorderSide(color: Colors.black),
+          ),
+        ));
   }
 }
