@@ -28,9 +28,9 @@ class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
 
   static const List<Widget> _widgetOptions = <Widget>[
-    Text('Home Page',
-        style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
     Text('Friends Page',
+        style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+    Text('Home Page',
         style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
     Text('QR Code Scanning Page',
         style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
@@ -52,12 +52,12 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
             icon: Icon(Icons.people),
             label: 'Friends',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.qr_code),
