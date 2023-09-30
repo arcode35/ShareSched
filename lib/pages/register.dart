@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'custom_widgets.dart';
+import 'home.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
@@ -35,11 +36,13 @@ class RegisterForm extends StatelessWidget {
           child: Column(
             children: [
               EmailField(),
-              SizedBox(height: 30),
+              SizedBox(height: 20),
+              UsernameField(),
+              SizedBox(height: 20),
               PasswordField(),
               SizedBox(height: 10),
               ConfirmPasswordField(),
-              SizedBox(height: 10),
+              SizedBox(height: 20),
               SignUpButton(),
             ],
           ),
@@ -75,6 +78,32 @@ class EmailField extends StatelessWidget {
   }
 }
 
+class UsernameField extends StatelessWidget {
+  const UsernameField({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 35),
+      child: TextFormField(
+        keyboardType: TextInputType.emailAddress,
+        decoration: InputDecoration(
+          labelText: "Username",
+          hintText: 'Enter username',
+          hintStyle: GoogleFonts.montserrat(),
+          labelStyle: GoogleFonts.montserrat(),
+          prefixIcon: const Icon(Icons.person),
+          border: const OutlineInputBorder(),
+        ),
+        onChanged: (String Value) {},
+        validator: (value) {
+          return value!.isEmpty ? 'Please Enter Username' : null;
+        },
+      ),
+    );
+  }
+}
+
 class PasswordField extends StatelessWidget {
   const PasswordField({super.key});
 
@@ -83,6 +112,7 @@ class PasswordField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 35),
       child: TextFormField(
+        obscureText: true,
         keyboardType: TextInputType.visiblePassword,
         decoration: InputDecoration(
           labelText: "Password",
@@ -109,6 +139,7 @@ class ConfirmPasswordField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 35),
       child: TextFormField(
+        obscureText: true,
         keyboardType: TextInputType.visiblePassword,
         decoration: InputDecoration(
           labelText: "Confirm Password",
@@ -138,6 +169,11 @@ class SignUpButton extends StatelessWidget {
         onPressed: () {},
         color: Colors.black,
         textColor: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(
+              30.0), // Adjust the value to make it more or less rounded
+          side: const BorderSide(color: Colors.black),
+        ),
         child: Text('Sign Up',
             style: GoogleFonts.exo(fontSize: 20, color: Colors.white)),
       ),

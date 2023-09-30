@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'custom_widgets.dart';
 import 'register.dart';
+import 'home.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -68,11 +69,11 @@ class EmailField extends StatelessWidget {
       child: TextFormField(
         keyboardType: TextInputType.emailAddress,
         decoration: InputDecoration(
-          labelText: "Email",
-          hintText: 'Enter email',
+          labelText: "Email / User",
+          hintText: 'Enter email / user',
           hintStyle: GoogleFonts.montserrat(),
           labelStyle: GoogleFonts.montserrat(),
-          prefixIcon: const Icon(Icons.email),
+          prefixIcon: const Icon(Icons.person),
           border: const OutlineInputBorder(),
         ),
         onChanged: (String Value) {},
@@ -93,6 +94,7 @@ class PasswordField extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 35),
       child: TextFormField(
         keyboardType: TextInputType.visiblePassword,
+        obscureText: true,
         decoration: InputDecoration(
           labelText: "Password",
           hintText: 'Enter password',
@@ -120,7 +122,7 @@ class CreateAccountButton extends StatelessWidget {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => RegisterScreen()),
+            MaterialPageRoute(builder: (context) => const RegisterScreen()),
           );
         },
         child: Text('Create an account', style: GoogleFonts.montserrat()),
@@ -130,18 +132,29 @@ class CreateAccountButton extends StatelessWidget {
 }
 
 class LoginButton extends StatelessWidget {
-  const LoginButton({super.key});
+  const LoginButton({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 100),
       child: MaterialButton(
         minWidth: double.infinity,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const HomePage()),
+          );
+        },
         color: Colors.black,
         textColor: Colors.white,
-        child: Text('Log In',
-            style: GoogleFonts.exo(fontSize: 20, color: Colors.white)),
+        child: Text(
+          'Log In',
+          style: GoogleFonts.exo(fontSize: 20, color: Colors.white),
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30.0),
+          side: BorderSide(color: Colors.black),
+        ),
       ),
     );
   }
