@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'custom_widgets.dart';
 import 'register.dart';
-import 'home.dart';
+import 'package:myapp/navigation/navigation_bar.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -243,25 +243,29 @@ class LoginButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 100),
-      child: MaterialButton(
-        minWidth: double.infinity,
-        onPressed: () {
-          Navigator.push(
+    return MaterialButton(
+      minWidth: 335,
+      height: 52,
+      onPressed: () {
+        Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const HomeScreen()),
-          );
-        },
-        color: Colors.black,
-        textColor: Colors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30.0),
-          side: BorderSide(color: Colors.black),
-        ),
-        child: Text(
-          'Log In',
-          style: GoogleFonts.exo(fontSize: 20, color: Colors.white),
+            MaterialPageRoute(
+              builder: (context) => CustomNavigationBar(),
+            ));
+      },
+      color: const Color(0xFF1264D1),
+      textColor: Colors.black,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(50.0),
+        side: const BorderSide(color: Colors.black, width: 0.3),
+      ),
+      child: const Text(
+        'LOG IN',
+        style: TextStyle(
+          fontFamily: 'Mulish',
+          fontWeight: FontWeight.w700,
+          fontSize: 15,
+          letterSpacing: 1.25,
         ),
       ),
     );
