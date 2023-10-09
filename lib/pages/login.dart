@@ -9,18 +9,18 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
           // Background
-          BackgroundWidget(),
+          const BackgroundWidget(),
           SingleChildScrollView(
             keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
             child: Column(
               children: [
                 // Logo
-                LogoWidget(
+                const LogoWidget(
                   height: 300,
                   width: 300,
                   logoText: "",
@@ -39,10 +39,30 @@ class LoginScreen extends StatelessWidget {
   }
 }
 
-class LoginForm extends StatelessWidget {
-  const LoginForm({super.key});
+class LoginForm extends StatefulWidget {
+  @override
+  _LoginFormState createState() => _LoginFormState();
+}
+
+class _LoginFormState extends State<LoginForm> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
+  void onLoginButtonPressed() {
+    // save to login details to data base here?
+    String email = emailController.text;
+    String password = passwordController.text;
+    print("Email: $email");
+    print("Password: $password");
+  }
+
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -59,11 +79,11 @@ class LoginForm extends StatelessWidget {
           child: Column(
             children: [
               const SizedBox(height: 20),
-              const EmailField(),
+              EmailField(controller: emailController),
               const SizedBox(height: 20),
-              const PasswordField(),
+              PasswordField(controller: passwordController),
               const SizedBox(height: 20),
-              const LoginButton(),
+              LoginButton(buttonPressed: onLoginButtonPressed),
               const SizedBox(height: 20),
               const AuthButtons(),
               const SizedBox(height: 20),
@@ -110,7 +130,9 @@ class TextField extends StatelessWidget {
 }
 
 class EmailField extends StatelessWidget {
-  const EmailField({super.key});
+  final TextEditingController controller;
+
+  const EmailField({required this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -134,6 +156,7 @@ class EmailField extends StatelessWidget {
           const SizedBox(height: 5),
           // Email Text Field
           TextFormField(
+            controller: controller,
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
               labelText: 'name@email.com',
@@ -174,8 +197,8 @@ class EmailField extends StatelessWidget {
 }
 
 class PasswordField extends StatelessWidget {
-  const PasswordField({super.key});
-
+  final TextEditingController controller;
+  const PasswordField({required this.controller});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -198,6 +221,7 @@ class PasswordField extends StatelessWidget {
           const SizedBox(height: 5),
           // Username Text Field
           TextFormField(
+            controller: controller,
             obscureText: true,
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
@@ -239,7 +263,9 @@ class PasswordField extends StatelessWidget {
 }
 
 class LoginButton extends StatelessWidget {
-  const LoginButton({Key? key}) : super(key: key);
+  final Function buttonPressed;
+
+  const LoginButton({super.key, required this.buttonPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -247,6 +273,7 @@ class LoginButton extends StatelessWidget {
       minWidth: 335,
       height: 52,
       onPressed: () {
+        buttonPressed();
         Navigator.push(
             context,
             MaterialPageRoute(

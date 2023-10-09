@@ -26,7 +26,7 @@ class RegisterScreen extends StatelessWidget {
                   alignment: Alignment.topCenter,
                 ),
                 // Registration Form
-                const Center(
+                Center(
                   child: RegisterForm(),
                 ),
                 const SizedBox(height: 20),
@@ -72,8 +72,26 @@ class TextField extends StatelessWidget {
   }
 }
 
-class RegisterForm extends StatelessWidget {
-  const RegisterForm({super.key});
+class RegisterForm extends StatefulWidget {
+  @override
+  _RegisterFormState createState() => _RegisterFormState();
+}
+
+class _RegisterFormState extends State<RegisterForm> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController usernameController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+  void onSignUpButtonPressed() {
+    // save login details to database here?
+    String email = emailController.text;
+    String username = usernameController.text;
+    String password = passwordController.text;
+
+    print("Email: $email");
+    print("Username: $username");
+    print("Password: $password");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -89,19 +107,21 @@ class RegisterForm extends StatelessWidget {
               fontWeight: FontWeight.bold,
             )),
         const SizedBox(height: 20),
-        const Form(
+        Form(
           child: Column(
             children: [
-              SizedBox(height: 20),
-              EmailField(),
-              SizedBox(height: 20),
-              UsernameField(),
-              SizedBox(height: 20),
-              PasswordField(),
-              SizedBox(height: 20),
-              SignUpButton(),
-              SizedBox(height: 20),
-              AuthButtons(),
+              const SizedBox(height: 20),
+              EmailField(
+                controller: emailController,
+              ),
+              const SizedBox(height: 20),
+              UsernameField(controller: usernameController),
+              const SizedBox(height: 20),
+              PasswordField(controller: passwordController),
+              const SizedBox(height: 20),
+              SignUpButton(buttonPressed: onSignUpButtonPressed),
+              const SizedBox(height: 20),
+              const AuthButtons(),
             ],
           ),
         ),
@@ -111,7 +131,9 @@ class RegisterForm extends StatelessWidget {
 }
 
 class EmailField extends StatelessWidget {
-  const EmailField({super.key});
+  TextEditingController controller = TextEditingController();
+
+  EmailField({required this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -135,6 +157,7 @@ class EmailField extends StatelessWidget {
           const SizedBox(height: 5),
           // Email Text Field
           TextFormField(
+            controller: controller,
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
               labelText: 'name@email.com',
@@ -175,7 +198,9 @@ class EmailField extends StatelessWidget {
 }
 
 class UsernameField extends StatelessWidget {
-  const UsernameField({super.key});
+  TextEditingController controller = TextEditingController();
+
+  UsernameField({required this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -199,6 +224,7 @@ class UsernameField extends StatelessWidget {
           const SizedBox(height: 5),
           // Username Text Field
           TextFormField(
+            controller: controller,
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
               labelText: 'johndoe',
@@ -239,8 +265,9 @@ class UsernameField extends StatelessWidget {
 }
 
 class PasswordField extends StatelessWidget {
-  const PasswordField({super.key});
+  TextEditingController controller = TextEditingController();
 
+  PasswordField({super.key, required this.controller});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -263,6 +290,7 @@ class PasswordField extends StatelessWidget {
           const SizedBox(height: 5),
           // Username Text Field
           TextFormField(
+            controller: controller,
             obscureText: true,
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
@@ -304,7 +332,9 @@ class PasswordField extends StatelessWidget {
 }
 
 class SignUpButton extends StatelessWidget {
-  const SignUpButton({Key? key}) : super(key: key);
+  const SignUpButton({required this.buttonPressed});
+
+  final Function buttonPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -312,7 +342,7 @@ class SignUpButton extends StatelessWidget {
       minWidth: 335,
       height: 52,
       onPressed: () {
-        // Handle button press
+        buttonPressed();
       },
       color: const Color(0xFF1264D1),
       textColor: Colors.black,
