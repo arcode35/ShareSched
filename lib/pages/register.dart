@@ -97,9 +97,6 @@ class RegisterForm extends StatelessWidget {
               SizedBox(height: 20),
               UsernameField(),
               SizedBox(height: 20),
-              SizedBox(height: 20),
-              UsernameField(),
-              SizedBox(height: 20),
               PasswordField(),
               SizedBox(height: 20),
               SignUpButton(),
@@ -241,32 +238,6 @@ class UsernameField extends StatelessWidget {
   }
 }
 
-class UsernameField extends StatelessWidget {
-  const UsernameField({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 35),
-      child: TextFormField(
-        keyboardType: TextInputType.emailAddress,
-        decoration: InputDecoration(
-          labelText: "Username",
-          hintText: 'Enter username',
-          hintStyle: GoogleFonts.montserrat(),
-          labelStyle: GoogleFonts.montserrat(),
-          prefixIcon: const Icon(Icons.person),
-          border: const OutlineInputBorder(),
-        ),
-        onChanged: (String Value) {},
-        validator: (value) {
-          return value!.isEmpty ? 'Please Enter Username' : null;
-        },
-      ),
-    );
-  }
-}
-
 class PasswordField extends StatelessWidget {
   const PasswordField({super.key});
 
@@ -337,22 +308,6 @@ class SignUpButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< Updated upstream
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 100),
-      child: MaterialButton(
-        minWidth: double.infinity,
-        onPressed: () {},
-        color: Colors.black,
-        textColor: Colors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(
-              30.0), // Adjust the value to make it more or less rounded
-          side: const BorderSide(color: Colors.black),
-        ),
-        child: Text('Sign Up',
-            style: GoogleFonts.exo(fontSize: 20, color: Colors.white)),
-=======
     return MaterialButton(
       minWidth: 335,
       height: 52,
@@ -373,7 +328,6 @@ class SignUpButton extends StatelessWidget {
           fontSize: 15,
           letterSpacing: 1.25,
         ),
->>>>>>> Stashed changes
       ),
     );
   }

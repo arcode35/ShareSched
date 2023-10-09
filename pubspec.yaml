@@ -75,11 +75,10 @@ flutter:
     - assets/page-1/images/objects.png
     - assets/page-1/images/objects-TvP.png
     - assets/page-1/images/google-FUK.png
-    - assets\page-1\images\custom\blue_bg.png
-    - assets\page-1\images\custom\logo.png
-    - assets\page-1\images\custom\email_icon.png
-    - assets\page-1\images\custom\lock_icon.png
-    - assets\page-1\images\custom\user_icon.png
+    - assets/page-1/images/custom/logo.png
+    - assets/page-1/images/custom/email_icon.png
+    - assets/page-1/images/custom/lock_icon.png
+    - assets/page-1/images/custom/user_icon.png
     - assets/page-1/images/custom/apple.png
     - assets/page-1/images/custom/facebook.png
     - assets/page-1/images/custom/google.png

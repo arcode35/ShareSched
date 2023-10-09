@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/pages/custom_widgets.dart';
-import 'pages/login.dart';
 import 'pages/welcome.dart';
 
 void main() {

@@ -2,11 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'custom_widgets.dart';
 import 'register.dart';
-<<<<<<< Updated upstream
-import 'home.dart';
-=======
 import 'package:myapp/navigation/navigation_bar.dart';
->>>>>>> Stashed changes
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -247,23 +243,6 @@ class LoginButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< Updated upstream
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 100),
-      child: MaterialButton(
-        minWidth: double.infinity,
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const HomePage()),
-          );
-        },
-        color: Colors.black,
-        textColor: Colors.white,
-        child: Text(
-          'Log In',
-          style: GoogleFonts.exo(fontSize: 20, color: Colors.white),
-=======
     return MaterialButton(
       minWidth: 335,
       height: 52,
@@ -277,18 +256,13 @@ class LoginButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(50.0),
         side: const BorderSide(color: Colors.black, width: 0.3),
       ),
-      child: const Text(
+      child: Text(
         'LOG IN',
         style: TextStyle(
           fontFamily: 'Mulish',
           fontWeight: FontWeight.w700,
           fontSize: 17,
           letterSpacing: 2,
->>>>>>> Stashed changes
-        ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30.0),
-          side: BorderSide(color: Colors.black),
         ),
       ),
     );

@@ -1,64 +1,12 @@
 import 'package:flutter/material.dart';
 import 'custom_widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< Updated upstream
-    return const MaterialApp(
-      home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
-
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 0;
-
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text('Home Page',
-        style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-    Text('Friends Page',
-        style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-    Text('QR Code Scanning Page',
-        style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-  ];
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const CustomAppBar(),
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.people),
-            label: 'Friends',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.qr_code),
-            label: 'QR Code',
-=======
     return const Scaffold(
       resizeToAvoidBottomInset: false,
       body: Stack(
@@ -74,7 +22,6 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
->>>>>>> Stashed changes
           ),
         ],
       ),
