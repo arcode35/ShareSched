@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'custom_widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'custom_widgets.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -11,12 +11,13 @@ class HomeScreen extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
+          // Background
           BackgroundWidget(),
           SingleChildScrollView(
             keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
             child: Column(
               children: [
-                // Home Form
+                // Login Form
                 Center(
                   child: ScheduleForm(),
                 ),
