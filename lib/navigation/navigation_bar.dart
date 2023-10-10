@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/pages/custom_widgets.dart';
 import 'package:myapp/pages/home.dart';
 import 'package:myapp/pages/friends.dart';
 
@@ -23,6 +24,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Screens[_currentIndex],
+        appBar: const CustomAppBar(),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentIndex,
           backgroundColor: Colors.black,
@@ -36,12 +38,15 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
                 ),
                 label: ''),
             BottomNavigationBarItem(
-                icon: ImageIcon(
-                  AssetImage('assets/page-1/images/custom/profile.png'),
-                  size: 26,
+                icon: Icon(
+                  Icons.group,
+                  size: 30,
                 ),
                 label: ''),
-            BottomNavigationBarItem(icon: Icon(Icons.qr_code), label: ''),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.qr_code),
+              label: '',
+            ),
           ],
           onTap: (index) {
             print(index);

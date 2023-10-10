@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
       body: Stack(
         children: [
           // Background
-          BackgroundWidget(),
+          BackgroundWidget2(),
           SingleChildScrollView(
             keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
             child: Column(
@@ -39,7 +39,7 @@ class ScheduleForm extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        SizedBox(height: 100),
+        SizedBox(height: 50),
         Text('Schedule',
             style: GoogleFonts.quicksand(
               fontSize: 32,

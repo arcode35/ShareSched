@@ -12,18 +12,11 @@ class FriendScreen extends StatelessWidget {
       body: Stack(
         children: [
           // Background
-          const BackgroundWidget(),
+          const BackgroundWidget2(),
           SingleChildScrollView(
             keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
             child: Column(
               children: [
-                // Logo
-                const LogoWidget(
-                  height: 300,
-                  width: 300,
-                  logoText: "",
-                  alignment: Alignment.center,
-                ),
                 // Login Form
                 Center(
                   child: SearchForm(),
@@ -53,17 +46,19 @@ class _SearchFormState extends State<SearchForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
+    return Stack(
+      alignment: Alignment.center,
       children: [
-        Text('Add Friends',
-            style: GoogleFonts.quicksand(
-              fontSize: 32,
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            )),
-        const SizedBox(height: 20),
+        Positioned(
+          top: 70,
+          child: Text('Friends',
+              style: GoogleFonts.quicksand(
+                fontSize: 32,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              )),
+        ),
+        const SizedBox(height: 500),
         Form(
           child: Column(
             children: [
@@ -152,8 +147,8 @@ class SearchButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      minWidth: 335,
-      height: 52,
+      minWidth: 300,
+      height: 50,
       onPressed: () {
         buttonPressed();
       },

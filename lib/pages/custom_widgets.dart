@@ -8,9 +8,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       title: Image.asset(
-        'assets/page-1/images/custom/logo.png',
+        'assets/page-1/images/custom/logo_2.png',
         fit: BoxFit.cover,
-        height: 100,
+        height: 40,
       ),
       backgroundColor: const Color.fromARGB(255, 0, 0, 0),
       bottomOpacity: 20,
@@ -87,7 +87,32 @@ class BackgroundWidget2 extends StatelessWidget {
     return Container(
       height: double.infinity,
       width: double.infinity,
-      color: Color.fromARGB(255, 6, 5, 34),
+      color: const Color.fromARGB(255, 0, 11, 24),
+    );
+  }
+}
+
+class BackgroundWidget3 extends StatelessWidget {
+  const BackgroundWidget3({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    print("Background widget building");
+    return Container(
+      height: double.infinity,
+      width: double.infinity,
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Color.fromARGB(255, 0, 11, 24),
+            Color.fromARGB(255, 0, 23, 45),
+            Color.fromARGB(255, 0, 39, 77),
+            Color.fromARGB(255, 2, 56, 110)
+          ],
+        ),
+      ),
     );
   }
 }
