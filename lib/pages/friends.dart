@@ -7,19 +7,18 @@ class FriendScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
           // Background
-          BackgroundWidget(),
-          // Everything that should scroll
+          const BackgroundWidget(),
           SingleChildScrollView(
             keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
             child: Column(
               children: [
                 // Logo
-                LogoWidget(
+                const LogoWidget(
                   height: 300,
                   width: 300,
                   logoText: "",
@@ -38,8 +37,19 @@ class FriendScreen extends StatelessWidget {
   }
 }
 
-class SearchForm extends StatelessWidget {
-  const SearchForm({super.key});
+class SearchForm extends StatefulWidget {
+  @override
+  _SearchFormState createState() => _SearchFormState();
+}
+
+class _SearchFormState extends State<SearchForm> {
+  TextEditingController friendName = TextEditingController();
+
+  void onSearchButtonPressed() {
+    // add search db logic here
+    String username = friendName.text;
+    print("Username: $username");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,13 +64,15 @@ class SearchForm extends StatelessWidget {
               fontWeight: FontWeight.bold,
             )),
         const SizedBox(height: 20),
-        const Form(
+        Form(
           child: Column(
             children: [
-              SizedBox(height: 20),
-              AddFriendsField(),
-              SizedBox(height: 70),
-              SearchButton(),
+              const SizedBox(height: 20),
+              AddFriendsField(controller: friendName),
+              const SizedBox(height: 70),
+              SearchButton(
+                buttonPressed: onSearchButtonPressed,
+              ),
             ],
           ),
         ),
@@ -70,7 +82,9 @@ class SearchForm extends StatelessWidget {
 }
 
 class AddFriendsField extends StatelessWidget {
-  const AddFriendsField({super.key});
+  TextEditingController controller;
+
+  AddFriendsField({required this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -94,6 +108,7 @@ class AddFriendsField extends StatelessWidget {
           const SizedBox(height: 5),
           // Username Text Field
           TextFormField(
+            controller: controller,
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
               labelText: 'Add friends with their username!',
@@ -130,7 +145,9 @@ class AddFriendsField extends StatelessWidget {
 }
 
 class SearchButton extends StatelessWidget {
-  const SearchButton({Key? key}) : super(key: key);
+  final Function buttonPressed;
+
+  const SearchButton({super.key, required this.buttonPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -138,7 +155,7 @@ class SearchButton extends StatelessWidget {
       minWidth: 335,
       height: 52,
       onPressed: () {
-        // Add Friends Feature
+        buttonPressed();
       },
       color: const Color(0xFF1264D1),
       textColor: Colors.black,

@@ -56,7 +56,7 @@ class _LoginFormState extends State<LoginForm> {
   }
 
   void onLoginButtonPressed() {
-    // save to login details to data base here?
+    // Save to login details to data base here?
     String email = emailController.text;
     String password = passwordController.text;
     print("Email: $email");
