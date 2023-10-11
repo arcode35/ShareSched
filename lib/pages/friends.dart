@@ -28,7 +28,21 @@ class _FriendScreenState extends State<FriendScreen> {
             child: Column(
               children: [
                 FriendWidget(toggleAddFriend: toggleAddFriend),
-                addFriendSelected ? Center(child: SearchForm()) : Container(),
+                addFriendSelected
+                    ? Center(child: SearchForm())
+                    : Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          const SizedBox(height: 50),
+                          Text('Friends',
+                              style: GoogleFonts.quicksand(
+                                fontSize: 32,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              )),
+                        ],
+                      )
               ],
             ),
           ),
@@ -59,7 +73,7 @@ class _SearchFormState extends State<SearchForm> {
       children: [
         Positioned(
           top: 70,
-          child: Text('Friends',
+          child: Text('Add Friends',
               style: GoogleFonts.quicksand(
                 fontSize: 32,
                 color: Colors.white,
