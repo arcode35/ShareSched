@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/models/user.dart';
 import 'package:myapp/services/auth.dart';
 import 'custom_widgets.dart';
 
@@ -324,6 +326,13 @@ class SignUpButton extends StatelessWidget {
       child: MaterialButton(
         minWidth: double.infinity,
         onPressed: () async {
+          final user = User(
+            email: email,
+            password: password, 
+            uid: '',
+            //fullName: 
+            
+          );
           // print(email); // Access the email parameter
           // print(password); // Access the password parameter
           dynamic result = await _auth.registerWithEmailAndPassword(email, password);
