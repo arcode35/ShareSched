@@ -17,7 +17,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
 
   final Screens = [
     const HomeScreen(),
-    const FriendScreen(),
+    FriendScreen(),
     const QRScreen(),
   ];
   @override

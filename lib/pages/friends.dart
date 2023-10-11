@@ -2,8 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'custom_widgets.dart';
 
-class FriendScreen extends StatelessWidget {
-  const FriendScreen({super.key});
+class FriendScreen extends StatefulWidget {
+  @override
+  _FriendScreenState createState() => _FriendScreenState();
+}
+
+class _FriendScreenState extends State<FriendScreen> {
+  bool addFriendSelected = false;
+
+  void toggleAddFriend(bool value) {
+    setState(() {
+      addFriendSelected = value;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -11,16 +22,13 @@ class FriendScreen extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
-          // Background
           const BackgroundWidget2(),
           SingleChildScrollView(
             keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
             child: Column(
               children: [
-                // Login Form
-                Center(
-                  child: SearchForm(),
-                ),
+                FriendWidget(toggleAddFriend: toggleAddFriend),
+                addFriendSelected ? Center(child: SearchForm()) : Container(),
               ],
             ),
           ),
@@ -167,6 +175,99 @@ class SearchButton extends StatelessWidget {
           letterSpacing: 2,
         ),
       ),
+    );
+  }
+}
+
+class FriendWidget extends StatefulWidget {
+  final Function toggleAddFriend;
+  FriendWidget({required this.toggleAddFriend});
+
+  @override
+  _FriendWidgetState createState() => _FriendWidgetState();
+}
+
+class _FriendWidgetState extends State<FriendWidget> {
+  @override
+  bool viewFriendSelected = true;
+  bool addFriendSelected = false;
+
+  void _selectViewFriend() {
+    setState(() {
+      viewFriendSelected = true;
+      addFriendSelected = false;
+      widget.toggleAddFriend(false);
+    });
+  }
+
+  void _selectViewAddFriend() {
+    setState(() {
+      viewFriendSelected = false;
+      addFriendSelected = true;
+      widget.toggleAddFriend(true);
+    });
+  }
+
+  Widget build(BuildContext build) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        ElevatedButton(
+          onPressed: () {
+            setState(() {
+              _selectViewFriend();
+            });
+          },
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.transparent,
+          ),
+          child: Icon(
+            Icons.person,
+            size: 30,
+            color: (viewFriendSelected
+                ? Colors.white
+                : const Color.fromARGB(255, 165, 154, 154)),
+          ),
+        ),
+        ElevatedButton(
+          onPressed: () {
+            setState(() {
+              _selectViewAddFriend();
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SearchForm(),
+                ],
+              );
+            });
+          },
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.transparent,
+          ),
+          child: Icon(
+            Icons.group_add,
+            size: 30,
+            color: (addFriendSelected
+                ? Colors.white
+                : const Color.fromARGB(255, 165, 154, 154)),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class FriendIcon extends StatelessWidget {
+  FriendIcon({super.key});
+
+  @override
+  Widget build(BuildContext build) {
+    return const Icon(
+      Icons.group_add,
+      size: 100,
+      color: Colors.white,
     );
   }
 }

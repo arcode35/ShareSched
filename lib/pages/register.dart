@@ -339,7 +339,7 @@ class SignUpButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      minWidth: 335,
+      minWidth: 300,
       height: 52,
       onPressed: () {
         buttonPressed();
