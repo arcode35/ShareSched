@@ -1,32 +1,14 @@
 import 'package:flutter/material.dart';
 import 'custom_widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:time_planner/time_planner.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      resizeToAvoidBottomInset: false,
-      body: Stack(
-        children: [
-          // Background
-          BackgroundWidget2(),
-          SingleChildScrollView(
-            keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-            child: Column(
-              children: [
-                // Login Form
-                Center(
-                  child: ScheduleForm(),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
+    return Schedule();
   }
 }
 
@@ -47,14 +29,6 @@ class ScheduleForm extends StatelessWidget {
               fontWeight: FontWeight.bold,
             )),
         const SizedBox(height: 20),
-        const Form(
-          child: Column(
-            children: [
-              SizedBox(height: 20),
-              ScheduleModalState(),
-            ],
-          ),
-        ),
       ],
     );
   }
@@ -88,7 +62,7 @@ class AddFriendsField extends StatelessWidget {
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
               labelText: 'Add friends with their username!',
-              prefixIcon: Icon(Icons.search),
+              prefixIcon: const Icon(Icons.search),
               filled: true,
               fillColor: Colors.white,
               // Rounded edges
@@ -120,40 +94,106 @@ class AddFriendsField extends StatelessWidget {
   }
 }
 
-class ScheduleModalState extends StatelessWidget {
-  const ScheduleModalState({Key? key}) : super(key: key);
-
+class ClassWidget extends StatefulWidget {
+  String courseName;
+  ClassWidget({super.key, required this.courseName});
   @override
+  _ClassWidget createState() => _ClassWidget(courseName: courseName);
+}
+
+class _ClassWidget extends State<ClassWidget> {
+  String courseName;
+  _ClassWidget({required this.courseName});
+  Widget build(BuildContext build) {
+    return TimePlannerTask(
+      color: Color.fromRGBO(53, 51, 205, 1),
+      dateTime: TimePlannerDateTime(day: 0, hour: 14, minutes: 30),
+      minutesDuration: 90,
+      onTap: () {
+        print('Task tapped!');
+      },
+      child: Text(
+        courseName,
+        style: TextStyle(color: Colors.grey[350], fontSize: 12),
+      ),
+    );
+  }
+}
+
+class Schedule extends StatefulWidget {
+  const Schedule({super.key});
+
+  _ScheduleState createState() => _ScheduleState();
+}
+
+class _ScheduleState extends State<Schedule> {
+  @override
+  List<TimePlannerTask> tasks = [
+    TimePlannerTask(
+      // background color for task
+      color: const Color.fromRGBO(53, 51, 205, 1),
+
+      // day: Index of header, hour: Task will be begin at this hour
+      // minutes: Task will be begin at this minutes
+      dateTime: TimePlannerDateTime(day: 1, hour: 14, minutes: 30),
+      // Minutes duration of task
+      minutesDuration: 90,
+      // Days duration of task (use for multi days task)
+      daysDuration: 1,
+      onTap: () {
+        print("Tapped");
+      },
+      child: Text(
+        'Linear Algebra',
+        style: TextStyle(
+            color: Colors.grey[350], fontSize: 12, fontFamily: 'Quicksand'),
+      ),
+    ),
+  ];
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Container(
-          padding: const EdgeInsets.all(50.0),
-          decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.5),
-                spreadRadius: 5,
-                blurRadius: 7,
-                offset: Offset(0, 5),
-              ),
-            ],
-            borderRadius: BorderRadius.circular(30),
-            gradient: const LinearGradient(
-              colors: [Colors.black, Colors.white],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-          ),
-          height: 460,
-          width: 460,
-          child: const Center(
-            child: Text('Schedule'),
-          ),
-        ),
-      ],
+    return Scaffold(
+      body: TimePlanner(
+        startHour: 8,
+        endHour: 20,
+        headers: const [
+          TimePlannerTitle(
+              title: 'Monday',
+              titleStyle: TextStyle(
+                color: Colors.white,
+                fontFamily: 'Quicksand',
+              )),
+          TimePlannerTitle(
+              title: 'Tuesday',
+              titleStyle: TextStyle(
+                color: Colors.white,
+                fontFamily: 'Quicksand',
+              )),
+          TimePlannerTitle(
+              title: 'Wednesday',
+              titleStyle: TextStyle(
+                color: Colors.white,
+                fontFamily: 'Quicksand',
+              )),
+          TimePlannerTitle(
+              title: 'Thursday',
+              titleStyle: TextStyle(
+                color: Colors.white,
+                fontFamily: 'Quicksand',
+              )),
+          TimePlannerTitle(
+              title: 'Friday',
+              titleStyle: TextStyle(
+                color: Colors.white,
+                fontFamily: 'Quicksand',
+              )),
+        ],
+        tasks: tasks,
+        style: TimePlannerStyle(
+            backgroundColor: Colors.white,
+            dividerColor: const Color.fromRGBO(53, 51, 205, 1),
+            borderRadius: const BorderRadius.all(Radius.circular(20.0))),
+        use24HourFormat: false,
+      ),
     );
   }
 }

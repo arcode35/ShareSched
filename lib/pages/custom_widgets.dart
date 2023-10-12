@@ -85,10 +85,7 @@ class BackgroundWidget2 extends StatelessWidget {
   Widget build(BuildContext context) {
     print("Background widget 2 building");
     return Container(
-      height: double.infinity,
-      width: double.infinity,
-      color: const Color.fromARGB(255, 0, 11, 24),
-    );
+        height: double.infinity, width: double.infinity, color: Colors.black);
   }
 }
 
