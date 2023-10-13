@@ -83,7 +83,7 @@ class _RegisterFormState extends State<RegisterForm> {
   final TextEditingController passwordController = TextEditingController();
 
   void onSignUpButtonPressed() {
-    // save login details to database here?
+    // save registration details to database here?
     String email = emailController.text;
     String username = usernameController.text;
     String password = passwordController.text;
@@ -339,7 +339,7 @@ class SignUpButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      minWidth: 300,
+      minWidth: 335,
       height: 52,
       onPressed: () {
         buttonPressed();

@@ -7,7 +7,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Schedule();
+    return Schedule();
   }
 }
 
@@ -20,7 +20,7 @@ class ScheduleForm extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        const SizedBox(height: 50),
+        SizedBox(height: 50),
         Text('Schedule',
             style: GoogleFonts.quicksand(
               fontSize: 32,
@@ -93,32 +93,6 @@ class AddFriendsField extends StatelessWidget {
   }
 }
 
-class ClassWidget extends StatefulWidget {
-  String courseName;
-  ClassWidget({super.key, required this.courseName});
-  @override
-  _ClassWidget createState() => _ClassWidget(courseName: courseName);
-}
-
-class _ClassWidget extends State<ClassWidget> {
-  String courseName;
-  _ClassWidget({required this.courseName});
-  Widget build(BuildContext build) {
-    return TimePlannerTask(
-      color: Color.fromRGBO(53, 51, 205, 1),
-      dateTime: TimePlannerDateTime(day: 0, hour: 14, minutes: 30),
-      minutesDuration: 90,
-      onTap: () {
-        print('Task tapped!');
-      },
-      child: Text(
-        courseName,
-        style: TextStyle(color: Colors.grey[350], fontSize: 12),
-      ),
-    );
-  }
-}
-
 class Schedule extends StatefulWidget {
   const Schedule({super.key});
 
@@ -143,7 +117,7 @@ class _ScheduleState extends State<Schedule> {
         print("Tapped");
       },
       child: Text(
-        'Linear Algebra',
+        'MATH 2418',
         style: TextStyle(
             color: Colors.grey[350], fontSize: 12, fontFamily: 'Quicksand'),
       ),
@@ -188,6 +162,7 @@ class _ScheduleState extends State<Schedule> {
         ],
         tasks: tasks,
         style: TimePlannerStyle(
+            horizontalTaskPadding: BorderSide.strokeAlignCenter,
             backgroundColor: Colors.black,
             dividerColor: const Color.fromRGBO(53, 51, 205, 1),
             borderRadius: const BorderRadius.all(Radius.circular(20.0))),

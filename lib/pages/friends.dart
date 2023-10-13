@@ -234,8 +234,9 @@ class _FriendWidgetState extends State<FriendWidget> {
             });
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.transparent,
-          ),
+              backgroundColor: Colors.transparent,
+              side: const BorderSide(
+                  color: Color.fromARGB(99, 255, 255, 255), width: 2.0)),
           child: Icon(
             Icons.person,
             size: 30,
@@ -259,6 +260,8 @@ class _FriendWidgetState extends State<FriendWidget> {
           },
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.transparent,
+            side: const BorderSide(
+                color: Color.fromARGB(99, 255, 255, 255), width: 2.0),
           ),
           child: Icon(
             Icons.group_add,
