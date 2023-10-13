@@ -275,10 +275,11 @@ packages:
   time_planner:
     dependency: "direct main"
     description:
-      name: time_planner
-      sha256: "7ac48d474784213e26ab68cec2a00e7a962d009b08d810425d4a59828d7c18f9"
-      url: "https://pub.dev"
-    source: hosted
+      path: "."
+      ref: HEAD
+      resolved-ref: "440d1837b76f07a4a3fb252845b15c2aff25d76f"
+      url: "https://github.com/arcode35/time_planner.git"
+    source: git
     version: "0.1.2+1"
   typed_data:
     dependency: transitive

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'custom_widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:time_planner/time_planner.dart';
 
@@ -189,7 +188,7 @@ class _ScheduleState extends State<Schedule> {
         ],
         tasks: tasks,
         style: TimePlannerStyle(
-            backgroundColor: Colors.white,
+            backgroundColor: Colors.black,
             dividerColor: const Color.fromRGBO(53, 51, 205, 1),
             borderRadius: const BorderRadius.all(Radius.circular(20.0))),
         use24HourFormat: false,
