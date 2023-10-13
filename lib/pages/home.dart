@@ -7,7 +7,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Schedule();
+    return const Schedule();
   }
 }
 
@@ -20,7 +20,7 @@ class ScheduleForm extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        SizedBox(height: 50),
+        const SizedBox(height: 50),
         Text('Schedule',
             style: GoogleFonts.quicksand(
               fontSize: 32,
@@ -158,33 +158,33 @@ class _ScheduleState extends State<Schedule> {
           TimePlannerTitle(
               title: 'Monday',
               titleStyle: TextStyle(
-                color: Colors.white,
-                fontFamily: 'Quicksand',
-              )),
+                  color: Colors.white,
+                  fontFamily: 'Quicksand',
+                  fontWeight: FontWeight.w700)),
           TimePlannerTitle(
               title: 'Tuesday',
               titleStyle: TextStyle(
-                color: Colors.white,
-                fontFamily: 'Quicksand',
-              )),
+                  color: Colors.white,
+                  fontFamily: 'Quicksand',
+                  fontWeight: FontWeight.w700)),
           TimePlannerTitle(
               title: 'Wednesday',
               titleStyle: TextStyle(
-                color: Colors.white,
-                fontFamily: 'Quicksand',
-              )),
+                  color: Colors.white,
+                  fontFamily: 'Quicksand',
+                  fontWeight: FontWeight.w700)),
           TimePlannerTitle(
               title: 'Thursday',
               titleStyle: TextStyle(
-                color: Colors.white,
-                fontFamily: 'Quicksand',
-              )),
+                  color: Colors.white,
+                  fontFamily: 'Quicksand',
+                  fontWeight: FontWeight.w700)),
           TimePlannerTitle(
               title: 'Friday',
               titleStyle: TextStyle(
-                color: Colors.white,
-                fontFamily: 'Quicksand',
-              )),
+                  color: Colors.white,
+                  fontFamily: 'Quicksand',
+                  fontWeight: FontWeight.w700)),
         ],
         tasks: tasks,
         style: TimePlannerStyle(
