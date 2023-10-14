@@ -49,35 +49,3 @@ class IconWidget extends StatelessWidget {
     );
   }
 }
-
-class SearchButton extends StatelessWidget {
-  final Function buttonPressed;
-
-  const SearchButton({super.key, required this.buttonPressed});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialButton(
-      minWidth: 300,
-      height: 50,
-      onPressed: () {
-        buttonPressed();
-      },
-      color: const Color(0xFF1264D1),
-      textColor: Colors.black,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(50.0),
-        side: const BorderSide(color: Colors.black, width: 0.3),
-      ),
-      child: const Text(
-        'SEARCH',
-        style: TextStyle(
-          fontFamily: 'Mulish',
-          fontWeight: FontWeight.w700,
-          fontSize: 17,
-          letterSpacing: 2,
-        ),
-      ),
-    );
-  }
-}

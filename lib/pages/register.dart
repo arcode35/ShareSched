@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/pages/upload_schedule.dart';
 import 'login.dart';
 import 'custom_widgets.dart';
 
@@ -81,19 +82,16 @@ class _RegisterFormState extends State<RegisterForm> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-
   void onSignUpButtonPressed() {
     // save registration details to database here?
     String email = emailController.text;
     String username = usernameController.text;
     String password = passwordController.text;
-
     print("Email: $email");
     print("Username: $username");
     print("Password: $password");
   }
 
-  @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -343,6 +341,8 @@ class SignUpButton extends StatelessWidget {
       height: 52,
       onPressed: () {
         buttonPressed();
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => UploadScreen()));
       },
       color: const Color(0xFF1264D1),
       textColor: Colors.black,

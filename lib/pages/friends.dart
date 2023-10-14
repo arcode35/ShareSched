@@ -174,17 +174,17 @@ class SearchButton extends StatelessWidget {
       onPressed: () {
         buttonPressed();
       },
-      color: const Color(0xFF1264D1),
+      color: const Color.fromRGBO(53, 51, 205, 1),
       textColor: Colors.black,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(50.0),
         side: const BorderSide(color: Colors.black, width: 0.3),
       ),
       child: const Text(
-        'SEARCH',
+        'Search',
         style: TextStyle(
-          fontFamily: 'Mulish',
-          fontWeight: FontWeight.w700,
+          fontFamily: 'Quicksand',
+          fontWeight: FontWeight.w900,
           fontSize: 17,
           letterSpacing: 2,
         ),
