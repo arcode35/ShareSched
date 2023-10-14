@@ -13,8 +13,17 @@ class _UploadScreen extends State<UploadScreen> {
   final ImagePicker picker = ImagePicker();
   File? _image;
 
-  Future<void> imagePicker() async {
+  Future<void> takeImage() async {
     final XFile? photo = await picker.pickImage(source: ImageSource.camera);
+    if (photo != null) {
+      setState(() {
+        _image = File(photo.path);
+      });
+    }
+  }
+
+  Future<void> uploadImage() async {
+    final XFile? photo = await picker.pickImage(source: ImageSource.gallery);
     if (photo != null) {
       setState(() {
         _image = File(photo.path);
@@ -26,11 +35,39 @@ class _UploadScreen extends State<UploadScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-        alignment: Alignment.topCenter,
         children: [
-          BackgroundWidget(),
-          UploadText(),
-          UploadButton(onPressed: imagePicker),
+          const BackgroundWidget(),
+          Container(
+            alignment: Alignment.topCenter,
+            child: const UploadText(),
+          ),
+          Container(
+            alignment: Alignment.center,
+            child: const Icon(
+              Icons.camera,
+              size: 200,
+              color: Colors.white,
+            ),
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SizedBox(
+                height: 550,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TakePictureButton(buttonPressed: takeImage),
+                  const SizedBox(
+                    width: 20,
+                  ),
+                  UploadButton(buttonPressed: uploadImage),
+                ],
+              )
+            ],
+          )
         ],
       ),
     );
@@ -44,7 +81,7 @@ class UploadText extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        SizedBox(height: 80),
+        SizedBox(height: 120),
         Text('Upload',
             style: GoogleFonts.quicksand(
                 color: Colors.white,
@@ -64,18 +101,81 @@ class UploadText extends StatelessWidget {
 }
 
 class UploadButton extends StatelessWidget {
-  Function onPressed;
-  UploadButton({super.key, required this.onPressed});
-  Widget build(BuildContext build) {
-    return Container(
-        alignment: Alignment.center,
-        child: ElevatedButton(
-          onPressed: () => onPressed(),
-          style: ElevatedButton.styleFrom(
-            backgroundColor: const Color.fromRGBO(53, 51, 205, 1),
-          ),
-          child: Text('Upload Schedule!',
-              style: GoogleFonts.quicksand(color: Colors.black, fontSize: 18)),
+  final Function buttonPressed;
+
+  const UploadButton({super.key, required this.buttonPressed});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialButton(
+        minWidth: 180,
+        height: 52,
+        onPressed: () => buttonPressed(),
+        color: const Color(0xFF1264D1),
+        textColor: Colors.black,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(50.0),
+          side: const BorderSide(color: Colors.black, width: 0.3),
+        ),
+        child: const Row(
+          children: [
+            Icon(
+              Icons.image,
+              color: Colors.white,
+            ),
+            SizedBox(
+              width: 5,
+            ),
+            Text(
+              'Upload Picture',
+              style: TextStyle(
+                fontFamily: 'Mulish',
+                fontWeight: FontWeight.w700,
+                fontSize: 15,
+                letterSpacing: 1.25,
+              ),
+            ),
+          ],
+        ));
+  }
+}
+
+class TakePictureButton extends StatelessWidget {
+  final Function buttonPressed;
+
+  const TakePictureButton({super.key, required this.buttonPressed});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialButton(
+        minWidth: 180,
+        height: 52,
+        onPressed: () => buttonPressed(),
+        color: const Color(0xFF1264D1),
+        textColor: Colors.black,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(50.0),
+          side: const BorderSide(color: Colors.black, width: 0.3),
+        ),
+        child: const Row(
+          children: [
+            Icon(
+              Icons.camera_enhance,
+              color: Colors.white,
+            ),
+            SizedBox(
+              width: 5,
+            ),
+            Text(
+              'Take Picture',
+              style: TextStyle(
+                fontFamily: 'Mulish',
+                fontWeight: FontWeight.w700,
+                fontSize: 15,
+                letterSpacing: 1.25,
+              ),
+            ),
+          ],
         ));
   }
 }
