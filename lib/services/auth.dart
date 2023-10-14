@@ -46,7 +46,7 @@ class AuthService {
   final FirebaseAuth.FirebaseAuth _auth = FirebaseAuth.FirebaseAuth.instance;
 
   User? _userFromFirebaseUser(FirebaseAuth.User? user) {
-    return user != null ? User(uid: user.uid, email: user.email, password: user.password) : null;
+    return user != null ? User(uid: user.uid) : null;
   }
 
   // Register with email and password

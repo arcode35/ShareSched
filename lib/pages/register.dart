@@ -1,7 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/models/user.dart';
+import 'package:myapp/models/user_model.dart';
+import 'package:myapp/repositories/user_respository.dart';
 import 'package:myapp/services/auth.dart';
 import 'custom_widgets.dart';
 
@@ -316,9 +320,10 @@ class SignUpButton extends StatelessWidget {
   final String email;
   final String password;
 
+  CollectionReference user = FirebaseFirestore.instance.collection("Users");
+
    SignUpButton({Key? key, required this.email, required this.password})
       : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -326,13 +331,11 @@ class SignUpButton extends StatelessWidget {
       child: MaterialButton(
         minWidth: double.infinity,
         onPressed: () async {
-          final user = User(
+          await user.add({
             email: email,
             password: password, 
-            uid: '',
             //fullName: 
-            
-          );
+        }).then((value) => print("User Added"));
           // print(email); // Access the email parameter
           // print(password); // Access the password parameter
           dynamic result = await _auth.registerWithEmailAndPassword(email, password);
