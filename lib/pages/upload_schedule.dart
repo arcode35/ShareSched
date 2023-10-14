@@ -34,6 +34,7 @@ class _UploadScreen extends State<UploadScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomAppBar(),
       body: Stack(
         children: [
           const BackgroundWidget(),
@@ -43,9 +44,9 @@ class _UploadScreen extends State<UploadScreen> {
           ),
           Container(
             alignment: Alignment.center,
-            child: const Icon(
-              Icons.camera,
-              size: 200,
+            child: const ImageIcon(
+              AssetImage('assets/page-1/images/ocr.png'),
+              size: 500,
               color: Colors.white,
             ),
           ),
@@ -54,7 +55,7 @@ class _UploadScreen extends State<UploadScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(
-                height: 550,
+                height: 500,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -81,7 +82,7 @@ class UploadText extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        SizedBox(height: 120),
+        SizedBox(height: 80),
         Text('Upload',
             style: GoogleFonts.quicksand(
                 color: Colors.white,

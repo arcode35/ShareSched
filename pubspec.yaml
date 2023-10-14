@@ -94,6 +94,7 @@ flutter:
     - assets/page-1/images/custom/profile.png
     - assets/page-1/images/custom/modal.png
     - assets/page-1/images/custom/logo_2.png
+    - assets/page-1/images/ocr.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
