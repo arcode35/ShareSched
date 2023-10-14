@@ -169,27 +169,26 @@ class SearchButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      minWidth: 300,
-      height: 50,
-      onPressed: () {
-        buttonPressed();
-      },
-      color: const Color.fromRGBO(53, 51, 205, 1),
-      textColor: Colors.black,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(50.0),
-        side: const BorderSide(color: Colors.black, width: 0.3),
-      ),
-      child: const Text(
-        'Search',
-        style: TextStyle(
-          fontFamily: 'Quicksand',
-          fontWeight: FontWeight.w900,
-          fontSize: 17,
-          letterSpacing: 2,
+        minWidth: 300,
+        height: 50,
+        onPressed: () {
+          buttonPressed();
+        },
+        color: const Color.fromRGBO(53, 51, 205, 1),
+        textColor: Colors.black,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(50.0),
+          side: const BorderSide(color: Colors.black, width: 0.3),
         ),
-      ),
-    );
+        child: const Text(
+          'SEARCH',
+          style: TextStyle(
+            fontFamily: 'Mulish',
+            fontWeight: FontWeight.w700,
+            fontSize: 15,
+            letterSpacing: 1.25,
+          ),
+        ));
   }
 }
 
