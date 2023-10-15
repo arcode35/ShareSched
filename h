@@ -1,0 +1,219 @@
+[33mcommit 88323bebb92ac3b3ed59308e057fdaebb56badcc[m[33m ([m[1;36mHEAD -> [m[1;32maldrin[m[33m)[m
+Merge: c23a094 e90e605
+Author: AR <roshanaldrin@gmail.com>
+Date:   Sun Oct 8 18:35:46 2023 -0700
+
+    Merge branch 'aldrin' of https://github.com/acm-projects/ShareSched into aldrin
+
+[33mcommit c23a094816b99f9f11d2648aec8512bfb7e8f1fd[m
+Author: AR <roshanaldrin@gmail.com>
+Date:   Sun Oct 8 18:35:44 2023 -0700
+
+    testing
+
+[33mcommit e90e605688dff31cd55d756243d7bc065a51eee8[m[33m ([m[1;31morigin/aldrin[m[33m)[m
+Author: arcode35 <roshanaldrin@gmail.com>
+Date:   Sun Oct 8 20:33:20 2023 -0500
+
+    Fixed the assets folder and removed unnecessary imports
+
+[33mcommit 4caeac084586a1ead27666914b435d77ad68d852[m
+Author: AR <roshanaldrin@gmail.com>
+Date:   Sun Oct 8 17:06:16 2023 -0700
+
+    Revamped the login and registration page, created a welcome page with visual effects, a search for friends page and a temporary home page.
+
+[33mcommit b5867d90aa6813b9fac80aa33af3816a0484e602[m
+Merge: ddf90be 1b0b019
+Author: AR <roshanaldrin@gmail.com>
+Date:   Sat Sep 30 09:04:51 2023 -0700
+
+    .
+
+[33mcommit 1b0b0196ab6243899957a4620351a32003afd45f[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: AR <roshanaldrin@gmail.com>
+Date:   Sat Sep 30 08:56:34 2023 -0700
+
+    Changed the order of the app bar buttons
+
+[33mcommit ddf90be65ac65f99f50b57aa804cd3af025e5f5e[m
+Author: AR <roshanaldrin@gmail.com>
+Date:   Sat Sep 30 08:51:38 2023 -0700
+
+    Added a home page
+
+[33mcommit 4c4a365c70a8c303912dffb55d9e846e3794b5b8[m
+Author: AR <roshanaldrin@gmail.com>
+Date:   Sat Sep 30 08:48:43 2023 -0700
+
+    Added a home page
+
+[33mcommit 24c0e39ced6a7a22cbb2ea3a584e27147b0cf96b[m
+Author: AR <roshanaldrin@gmail.com>
+Date:   Sat Sep 30 08:22:12 2023 -0700
+
+    Added a home page
+
+[33mcommit 687ccc711ec29815208df15d18fc1963740f3a08[m
+Author: AR <roshanaldrin@gmail.com>
+Date:   Tue Sep 26 08:05:30 2023 -0700
+
+    Updated the login page
+
+[33mcommit e9819e230bf1a58d291976b765b074a7afa00719[m
+Author: AR <roshanaldrin@gmail.com>
+Date:   Tue Sep 26 07:53:01 2023 -0700
+
+    Added minor visual/performance improvements
+
+[33mcommit a6df3affed94b929f154ac7e4133d430c797220d[m
+Author: AR <roshanaldrin@gmail.com>
+Date:   Mon Sep 25 19:43:53 2023 -0700
+
+    Added a login/registration page
+
+[33mcommit c152601bf85f387a38328013053460e63104cead[m
+Merge: 7409e3d cc66257
+Author: AR <roshanaldrin@gmail.com>
+Date:   Mon Sep 25 19:41:50 2023 -0700
+
+    Merge branch 'aldrin'
+
+[33mcommit cc66257d2dc4135f8bb926c18def6baeb5392e12[m
+Author: AR <roshanaldrin@gmail.com>
+Date:   Mon Sep 25 19:27:03 2023 -0700
+
+    Added login and registration screen.
+
+[33mcommit 4948780abcf8f98ef7a837667b587b75939352dd[m
+Author: AR <roshanaldrin@gmail.com>
+Date:   Mon Sep 25 19:15:41 2023 -0700
+
+    Created the register screen and added navigation logic from the login screen to the register screen.
+
+[33mcommit 6ff3fdefbc26e3c954ddfea6675cefceb76382b2[m
+Author: AR <roshanaldrin@gmail.com>
+Date:   Mon Sep 25 19:12:11 2023 -0700
+
+    Created the register screen and added navigation logic from the login screen to the register screen.
+
+[33mcommit 0029c4c44f7ce53b92b32bdd57b837a82e882cb3[m
+Author: AR <roshanaldrin@gmail.com>
+Date:   Mon Sep 25 19:11:20 2023 -0700
+
+    Created the register screen and added navigation logic from the login screen to the register screen.
+
+[33mcommit 7031c5088e4fb510d08f815745358ad88fa5f2b7[m
+Author: AR <roshanaldrin@gmail.com>
+Date:   Mon Sep 25 10:39:01 2023 -0700
+
+    Revamped the UI and seperated the widgets into classes
+
+[33mcommit 4c9e245f1ec42b5c934d37683e899d544e7d4f2a[m
+Author: AR <roshanaldrin@gmail.com>
+Date:   Mon Sep 25 10:37:43 2023 -0700
+
+    Your commit message here
+
+[33mcommit 3a8c8b0e1ae4f82dafdc33ff09ea74858abfdc29[m
+Author: ar21 <45514615+arcode35@users.noreply.github.com>
+Date:   Mon Sep 25 12:14:33 2023 -0500
+
+    Add files via upload
+    
+    Revamped the UI and separated the widgets into classes.
+
+[33mcommit 7409e3d39e6c272410f8431b7e59d2e6d301d028[m[33m ([m[1;31morigin/Faizan-Branch[m[33m)[m
+Author: realkarinab <36458858+realkarinab@users.noreply.github.com>
+Date:   Sun Sep 24 11:13:02 2023 -0500
+
+    Update README.md
+
+[33mcommit e7897f410eab46a0669e6e1ba73db7b8b4a794cd[m
+Author: arcode35 <roshanaldrin@gmail.com>
+Date:   Sat Sep 23 18:58:43 2023 -0500
+
+    This is a final tes2t
+
+[33mcommit 75442a7ab44abaf6ae47868bbb43d2cb7b691208[m
+Merge: 2f89b89 ffd0828
+Author: NadeebaAtiqui <nadeebaatiqui@gmail.com>
+Date:   Sat Sep 23 18:56:52 2023 -0500
+
+    Merge branch 'main' of https://github.com/acm-projects/ShareSched
+
+[33mcommit 3252e57164c4a80f9392feb74424bf6c896a5899[m
+Author: arcode35 <roshanaldrin@gmail.com>
+Date:   Sat Sep 23 18:56:13 2023 -0500
+
+    This is a final test
+
+[33mcommit 2f89b89b434cd4e61b090c20b05c1a0b9525804f[m
+Merge: 106b505 7889dff
+Author: NadeebaAtiqui <nadeebaatiqui@gmail.com>
+Date:   Sat Sep 23 18:55:43 2023 -0500
+
+    Merge branch 'NadeebaBranch'
+
+[33mcommit ad89ffe3ea6eed4c4c612542cdddd070d72971c9[m
+Author: arcode35 <roshanaldrin@gmail.com>
+Date:   Sat Sep 23 18:55:09 2023 -0500
+
+    This is a test
+
+[33mcommit 2fceaa1d6be9b9ec9374a5d266dd2f7a104133c1[m
+Author: arcode35 <roshanaldrin@gmail.com>
+Date:   Sat Sep 23 18:46:41 2023 -0500
+
+    This is another test
+
+[33mcommit ffd0828df25f65caa6cb37fd962e560a444a0700[m
+Author: arcode35 <roshanaldrin@gmail.com>
+Date:   Sat Sep 23 18:45:25 2023 -0500
+
+    This is another test
+
+[33mcommit 6a7edb3dde1c8666dd94ff83d8a71d08d43a26ab[m
+Author: arcode35 <roshanaldrin@gmail.com>
+Date:   Sat Sep 23 18:44:08 2023 -0500
+
+    This is a test
+
+[33mcommit 106b50574fdb183a6047b37593e1cd7f372a32a5[m
+Merge: a967aec ecdb032
+Author: NoelEmmanuel <79769249+NoelEmmanuel@users.noreply.github.com>
+Date:   Sat Sep 23 18:39:08 2023 -0500
+
+    Merge pull request #1 from acm-projects/NoelBranch
+    
+    Noel first commit
+
+[33mcommit 7889dff5f9b5e646ebb8962d8a89df69d19d4f2e[m
+Author: NadeebaAtiqui <nadeebaatiqui@gmail.com>
+Date:   Sat Sep 23 18:36:31 2023 -0500
+
+    first commit
+
+[33mcommit ecdb03274b06f86666a3d7403467bbed7da7de21[m
+Author: NoelEmmanuel <noel.emmanuel20@gmail.com>
+Date:   Sat Sep 23 18:34:26 2023 -0500
+
+    Noel first commit
+
+[33mcommit a967aecf53be93691c32fef1e5ebd9587bc6bc10[m
+Author: realkarinab <36458858+realkarinab@users.noreply.github.com>
+Date:   Wed Sep 13 21:26:54 2023 -0500
+
+    Update README.md
+
+[33mcommit dee1947f4d1ad90acc832cf0b8b8529e17694089[m
+Author: realkarinab <36458858+realkarinab@users.noreply.github.com>
+Date:   Tue Sep 12 23:46:53 2023 -0500
+
+    Update README.md
+
+[33mcommit 12569a6b8212aca21e25457f24eee62ff091a701[m
+Author: Farhan Jamil <32781195+FarhanJamil0001@users.noreply.github.com>
+Date:   Sun Sep 3 21:56:41 2023 -0500
+
+    Initial commit
