@@ -94,7 +94,7 @@ class _RegisterFormState extends State<RegisterForm> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  void onSignUpButtonPressed() {
+  void onSignUpButtonPressed() async{
     final AuthService _auth = AuthService();
     // save registration details to database here?
     String email = emailController.text;
@@ -389,15 +389,7 @@ class SignUpButton extends StatelessWidget {
     return MaterialButton(
       minWidth: 335,
       height: 52,
-      onPressed: () async{
-        await user.add({
-            email: email,
-            password: password, 
-            //fullName: 
-        }).then((value) => print("User Added"));
-          // print(email); // Access the email parameter
-          // print(password); // Access the password parameter
-          dynamic result = await _auth.registerWithEmailAndPassword(email, password);
+      onPressed: (){
         buttonPressed();
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => UploadScreen()));
