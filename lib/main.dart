@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import 'package:firebase_core/firebase_core.dart';
 // import 'package:flutter/material.dart';
 // import 'package:myapp/firebase_options.dart';
@@ -72,6 +73,35 @@ void main() {
   runApp(const MaterialApp(
     home: UploadPic(),
   ));
+=======
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'pages/welcome.dart';
+
+import 'package:myapp/firebase_options.dart';
+import 'package:myapp/pages/custom_widgets.dart';
+import 'package:myapp/pages/wrapper.dart';
+import 'pages/login.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+Future <void> main() async {
+  Paint.enableDithering = true;
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  // await FirebaseFirestore.instance.settings( // Initialize Firestore
+  //   persistenceEnabled: true, // Enable local persistence
+  // );
+
+   // Initialize Firestore with settings
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
+  firestore.settings = const Settings(
+    persistenceEnabled: true, // Enable local persistence
+    // Add more settings as needed
+  );
+  runApp(const MyApp());
+>>>>>>> f3637b8ca2db05dd4824a99ba1c271a4747821a9
 }
 
 class UploadPic extends StatefulWidget {
@@ -87,6 +117,7 @@ class uploadpic extends State<UploadPic> {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     return Scaffold(
       appBar: AppBar(
           title: Text(
@@ -162,6 +193,10 @@ class uploadpic extends State<UploadPic> {
           ],
         ),
       ),
+=======
+    return MaterialApp(
+      home: WelcomeScreen(),
+>>>>>>> f3637b8ca2db05dd4824a99ba1c271a4747821a9
     );
   }
 
