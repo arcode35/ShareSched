@@ -45,13 +45,25 @@ import 'dart:typed_data';
 
 import 'package:firebase_storage/firebase_storage.dart';
 
-// Initialize Firebase Storage
-final storage = FirebaseStorage.instance;
+// // Initialize Firebase Storage
+// final storage = FirebaseStorage.instance;
 
-Future<String> uploadImage(Uint8List image, String uid) async {
-  final bucket = 'gs://flutter-sharesched.appspot.com/$uid.jpg';
-  final storageRef = storage.refFromURL(bucket);
-  await storageRef.putData(image);
-  return bucket;
-}
+// Future<String> uploadImage(Uint8List image, String uid) async {
+//   final bucket = 'gs://flutter-sharesched.appspot.com/$uid.jpg';
+//   final storageRef = storage.refFromURL(bucket);
+//   await storageRef.putData(image);
+//   return bucket;
+// }
 
+// Create a storage reference from our app
+final storageRef = FirebaseStorage.instance.ref();
+
+// Create a reference to "mountains.jpg"
+final schedulesRef = storageRef.child("schedules.jpg");
+
+// Create a reference to 'images/schedules.jpg'
+final scheduleImagesRef = storageRef.child("images/schedules.jpg");
+
+// While the file names are the same, the references point to different files
+assert(schedulesRef.name == scheduleImagesRef.name);
+assert(schedulesRef.fullPath != scheduleImagesRef.fullPath);

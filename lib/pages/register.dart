@@ -183,22 +183,6 @@ class EmailField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 35),
-<<<<<<< HEAD
-      child: TextFormField(
-        keyboardType: TextInputType.emailAddress,
-        decoration: InputDecoration(
-          labelText: "Email",
-          hintText: 'Enter email',
-          hintStyle: GoogleFonts.montserrat(),
-          labelStyle: GoogleFonts.montserrat(),
-          prefixIcon: const Icon(Icons.email),
-          border: const OutlineInputBorder(),
-        ),
-        onChanged: onChanged, // Call the provided onChanged callback
-        validator: (value) {
-          return value!.isEmpty ? 'Please Enter Email' : null;
-        },
-=======
 
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -321,7 +305,6 @@ class UsernameField extends StatelessWidget {
             },
           ),
         ],
->>>>>>> f3637b8ca2db05dd4824a99ba1c271a4747821a9
       ),
     );
   }
