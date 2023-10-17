@@ -3,15 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-<<<<<<< HEAD
-import 'package:myapp/services/auth.dart';
-import 'custom_widgets.dart';
-
-class RegisterScreen extends StatelessWidget {
-
-  // String email = '';
-  // String password = '';
-=======
 
 import 'package:myapp/models/user.dart';
 import 'package:myapp/models/user_model.dart';
@@ -25,7 +16,6 @@ import 'custom_widgets.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
->>>>>>> f3637b8ca2db05dd4824a99ba1c271a4747821a9
 
   @override
   Widget build(BuildContext context) {
@@ -62,53 +52,6 @@ class RegisterScreen extends StatelessWidget {
   }
 }
 
-<<<<<<< HEAD
-// class RegisterForm extends StatelessWidget {
-//   const RegisterForm({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Column(
-//       mainAxisAlignment: MainAxisAlignment.center,
-//       crossAxisAlignment: CrossAxisAlignment.center,
-//       children: [
-//         Text('Register',
-//             style: GoogleFonts.exo(
-//               fontSize: 35,
-//               color: Colors.black,
-//               fontWeight: FontWeight.bold,
-//             )),
-//         const SizedBox(height: 50),
-//         const Form(
-//           child: Column(
-//             children: [
-//               EmailField(),
-//               SizedBox(height: 30),
-//               PasswordField(),
-//               SizedBox(height: 10),
-//               ConfirmPasswordField(),
-//               SizedBox(height: 10),
-//               SignUpButton(),
-//             ],
-//           ),
-//         ),
-//       ],
-//     );
-//   }
-// }
-class RegisterForm extends StatefulWidget {
-  const RegisterForm({Key? key}) : super(key: key);
-
-  @override
-  _RegisterFormState createState() => _RegisterFormState();
-}
-
-class _RegisterFormState extends State<RegisterForm> {
-  //final AuthService _auth = AuthService();
-  String email = '';
-  String password = '';
-=======
->>>>>>> f3637b8ca2db05dd4824a99ba1c271a4747821a9
 
 class TextField extends StatelessWidget {
   @override
@@ -175,38 +118,6 @@ class _RegisterFormState extends State<RegisterForm> {
               color: Colors.white,
               fontWeight: FontWeight.bold,
             )),
-<<<<<<< HEAD
-        const SizedBox(height: 50),
-        Form(
-          child: Column(
-            children: [
-              EmailField(
-                onChanged: (String newValue) {
-                  setState(() {
-                    email = newValue;
-                  });
-                },
-              ),
-              SizedBox(height: 30),
-              PasswordField(
-                onChanged: (String newValue) {
-                  setState(() {
-                    password = newValue;
-                  });
-                },
-              ),
-              SizedBox(height: 10),
-              ConfirmPasswordField(
-                onChanged: (String newValue) {
-                  // You can handle the confirmation password value here if needed
-                },
-              ),
-              SizedBox(height: 10),
-              SignUpButton(
-                email: email,
-                password: password,
-              ),
-=======
 
         const SizedBox(height: 20),
         Form(
@@ -224,7 +135,6 @@ class _RegisterFormState extends State<RegisterForm> {
               SignUpButton(buttonPressed: onSignUpButtonPressed),
               const SizedBox(height: 20),
               const AuthButtons(),
->>>>>>> f3637b8ca2db05dd4824a99ba1c271a4747821a9
             ],
           ),
         ),
@@ -263,17 +173,11 @@ class _RegisterFormState extends State<RegisterForm> {
 //   }
 // }
 class EmailField extends StatelessWidget {
-<<<<<<< HEAD
-  final Function(String)? onChanged;
-
-  const EmailField({Key? key, this.onChanged}) : super(key: key);
-=======
 
   TextEditingController controller = TextEditingController();
 
   EmailField({required this.controller});
 
->>>>>>> f3637b8ca2db05dd4824a99ba1c271a4747821a9
 
   @override
   Widget build(BuildContext context) {
@@ -453,35 +357,13 @@ class UsernameField extends StatelessWidget {
 // }
 
 class PasswordField extends StatelessWidget {
-<<<<<<< HEAD
-  final Function(String)? onChanged;
-
-  const PasswordField({Key? key, this.onChanged}) : super(key: key);
-=======
   TextEditingController controller = TextEditingController();
->>>>>>> f3637b8ca2db05dd4824a99ba1c271a4747821a9
 
   PasswordField({super.key, required this.controller});
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 35),
-<<<<<<< HEAD
-      child: TextFormField(
-        obscureText: true, // Mask the entered text for passwords
-        decoration: InputDecoration(
-          labelText: "Password",
-          hintText: 'Enter password',
-          hintStyle: GoogleFonts.montserrat(),
-          labelStyle: GoogleFonts.montserrat(),
-          prefixIcon: const Icon(Icons.lock), // Use an appropriate icon for passwords
-          border: const OutlineInputBorder(),
-        ),
-        onChanged: onChanged, // Call the provided onChanged callback
-        validator: (value) {
-          return value!.isEmpty ? 'Please Enter Password' : null;
-        },
-=======
 
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -537,73 +419,11 @@ class PasswordField extends StatelessWidget {
             },
           ),
         ],
->>>>>>> f3637b8ca2db05dd4824a99ba1c271a4747821a9
       ),
     );
   }
 }
 
-<<<<<<< HEAD
-
-// class ConfirmPasswordField extends StatelessWidget {
-//   const ConfirmPasswordField({super.key});
-//   String password = '';
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Padding(
-//       padding: const EdgeInsets.symmetric(horizontal: 35),
-//       child: TextFormField(
-//         keyboardType: TextInputType.visiblePassword,
-//         decoration: InputDecoration(
-//           labelText: "Confirm Password",
-//           hintText: 'Confirm password',
-//           hintStyle: GoogleFonts.montserrat(),
-//           labelStyle: GoogleFonts.montserrat(),
-//           prefixIcon: const Icon(Icons.password),
-//           border: const OutlineInputBorder(),
-//         ),
-//         onChanged: (String Value) {
-//           setState(() => password = val);
-//         },
-//         validator: (value) {
-//           return value!.isEmpty ? 'Please Confirm Password' : null;
-//         },
-//       ),
-//     );
-//   }
-// }
-
-class ConfirmPasswordField extends StatelessWidget {
-  final Function(String)? onChanged;
-  
-  const ConfirmPasswordField({Key? key, this.onChanged}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 35),
-      child: TextFormField(
-        keyboardType: TextInputType.visiblePassword,
-        obscureText: true, // Mask the entered text for passwords
-        decoration: InputDecoration(
-          labelText: "Confirm Password",
-          hintText: 'Confirm password',
-          hintStyle: GoogleFonts.montserrat(),
-          labelStyle: GoogleFonts.montserrat(),
-          prefixIcon: const Icon(Icons.lock), // Use an appropriate icon for passwords
-          border: const OutlineInputBorder(),
-        ),
-        onChanged: onChanged, // Call the provided onChanged callback
-        validator: (value) {
-          return value!.isEmpty ? 'Please Confirm Password' : null;
-        },
-      ),
-    );
-  }
-}
-=======
->>>>>>> f3637b8ca2db05dd4824a99ba1c271a4747821a9
 
 
 // class SignUpButton extends StatelessWidget {
@@ -628,29 +448,6 @@ class ConfirmPasswordField extends StatelessWidget {
 // }
 
 class SignUpButton extends StatelessWidget {
-<<<<<<< HEAD
-  final AuthService _auth = AuthService();
-  final String email;
-  final String password;
-
-   SignUpButton({Key? key, required this.email, required this.password})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 100),
-      child: MaterialButton(
-        minWidth: double.infinity,
-        onPressed: () async {
-          // print(email); // Access the email parameter
-          // print(password); // Access the password parameter
-          dynamic result = await _auth.registerWithEmailAndPassword(email, password);
-        },
-        color: Colors.black,
-        textColor: Colors.white,
-        child: Text('Sign Up', style: GoogleFonts.exo(fontSize: 20, color: Colors.white)),
-=======
   const SignUpButton({required this.buttonPressed});
 
   final Function buttonPressed;
@@ -679,7 +476,6 @@ class SignUpButton extends StatelessWidget {
           fontSize: 15,
           letterSpacing: 1.25,
         ),
->>>>>>> f3637b8ca2db05dd4824a99ba1c271a4747821a9
       ),
     );
   }

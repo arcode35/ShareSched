@@ -1,79 +1,3 @@
-<<<<<<< HEAD
-// import 'package:firebase_core/firebase_core.dart';
-// import 'package:flutter/material.dart';
-// import 'package:myapp/firebase_options.dart';
-// import 'package:myapp/pages/custom_widgets.dart';
-// import 'package:myapp/pages/wrapper.dart';
-// import 'pages/login.dart';
-// import 'package:cloud_firestore/cloud_firestore.dart';
-// import 'package:firebase_storage/firebase_storage.dart';
-
-// Future <void> main() async {
-//   WidgetsFlutterBinding.ensureInitialized();
-//   await Firebase.initializeApp(
-//     options: DefaultFirebaseOptions.currentPlatform,
-//   );
-//   // await FirebaseFirestore.instance.settings( // Initialize Firestore
-//   //   persistenceEnabled: true, // Enable local persistence
-//   // );
-
-//    // Initialize Firestore with settings
-//   FirebaseFirestore firestore = FirebaseFirestore.instance;
-//   firestore.settings = const Settings(
-//     persistenceEnabled: true, // Enable local persistence
-//     // Add more settings as needed
-//   );
-
-//   //Initialize Firebase Storage
-//   final storage = FirebaseStorage.instance;
-
-//   runApp(const MyApp());
-// }
-
-// class MyApp extends StatelessWidget {
-//   const MyApp({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return const MaterialApp(
-//       home: Wrapper(),
-//     );
-//   }
-// }
-
-// class LoginScreen extends StatelessWidget {
-//   const LoginScreen({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return const Scaffold(
-//       appBar: CustomAppBar(),
-//       body: Center(
-//         child: LoginForm(),
-//       ),
-//     );
-//   }
-// }
-
-
-
-//FAIZAN CODE
-import 'dart:typed_data';
-
-import 'package:firebase_storage/firebase_storage.dart' as storage;
-
-import 'dart:io';
-import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:myapp/services/storage.dart';
-
-
-void main() {
-  runApp(const MaterialApp(
-    home: UploadPic(),
-  ));
-=======
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'pages/welcome.dart';
@@ -101,7 +25,6 @@ Future <void> main() async {
     // Add more settings as needed
   );
   runApp(const MyApp());
->>>>>>> f3637b8ca2db05dd4824a99ba1c271a4747821a9
 }
 
 class UploadPic extends StatefulWidget {
@@ -117,86 +40,8 @@ class uploadpic extends State<UploadPic> {
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
-    return Scaffold(
-      appBar: AppBar(
-          title: Text(
-            'Upload Your Schedule',
-            style: GoogleFonts.exo(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),),
-          centerTitle: true, backgroundColor: Colors.blue[800]
-
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            if(imageFile != null)
-              Container(
-                width: 640,
-                height: 480,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: Colors.grey,
-                  image: DecorationImage(
-                      image: FileImage(imageFile!),
-                      fit: BoxFit.cover
-                  ),
-                  border: Border.all(width: 8, color: Colors.black),
-                  borderRadius: BorderRadius.circular(12.0),
-                ),
-              )
-            else
-              Container(
-                  width: 640,
-                  height: 480,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    color: Colors.blue[200],
-                    border: Border.all(width: 8, color: Colors.black12),
-                    borderRadius: BorderRadius.circular(12.0),
-                  ),
-                  child: Text('Image', style: GoogleFonts.exo(
-                    fontSize: 20,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,),)
-              ),
-            const SizedBox(
-              height: 20,
-            ),
-            Row(
-              children: [
-                Expanded(
-                  child: ElevatedButton(
-                      onPressed: ()=> getImage(source: ImageSource.camera),
-                      child: Text('Capture Image', style: GoogleFonts.exo(
-                        fontSize: 17,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,),)
-                  ),
-                ),
-                const SizedBox(width: 20,),
-                Expanded(
-                  child: ElevatedButton(
-                      onPressed: ()=> getImage(source: ImageSource.gallery),
-                      child: Text('Select Image', style: GoogleFonts.exo(
-                        fontSize: 17,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,))
-                  ),
-                )
-              ],
-            ),
-          ],
-        ),
-      ),
-=======
     return MaterialApp(
       home: WelcomeScreen(),
->>>>>>> f3637b8ca2db05dd4824a99ba1c271a4747821a9
     );
   }
 
