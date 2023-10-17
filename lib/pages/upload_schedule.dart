@@ -1,5 +1,41 @@
+// import 'package:flutter/material.dart';
+// import 'package:google_fonts/google_fonts.dart';
+// import 'custom_widgets.dart';
+// import 'dart:io';
+// import 'package:image_picker/image_picker.dart';
+
+// class UploadScreen extends StatefulWidget {
+//   @override
+//   _UploadScreen createState() => _UploadScreen();
+// }
+
+// class _UploadScreen extends State<UploadScreen> {
+//   final ImagePicker picker = ImagePicker();
+//   File? _image;
+
+//   Future<void> takeImage() async {
+//     final XFile? photo = await picker.pickImage(source: ImageSource.camera);
+//     if (photo != null) {
+//       setState(() {
+//         _image = File(photo.path);
+//       });
+//       //process image
+//     }
+//   }
+
+//   Future<void> uploadImage() async {
+//     final XFile? photo = await picker.pickImage(source: ImageSource.gallery);
+//     if (photo != null) {
+//       setState(() {
+//         _image = File(photo.path);
+//       });
+//       //process image
+//     }
+//   }
+//my code starts:
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/services/storage.dart';
 import 'custom_widgets.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
@@ -19,6 +55,8 @@ class _UploadScreen extends State<UploadScreen> {
       setState(() {
         _image = File(photo.path);
       });
+      // Process the image if needed
+      _processAndUploadImage(_image);
     }
   }
 
@@ -28,11 +66,42 @@ class _UploadScreen extends State<UploadScreen> {
       setState(() {
         _image = File(photo.path);
       });
+      // Process the image if needed
+      _processAndUploadImage(_image);
     }
   }
 
+  // Future<void> _processAndUploadImage(File? image) async {
+  //   if (image != null) {
+  //     // Call the function to upload the image to Firebase Storage
+  //     String? downloadURL = await uploadImageToFirebaseStorage(image);
+
+  //     if (downloadURL != null) {
+  //       // The image has been successfully uploaded to Firebase Storage
+  //       // You can now use the downloadURL or perform further actions as needed.
+  //     } else {
+  //       // Handle the case where there was an error uploading the image
+  //       // You might want to display an error message to the user.
+  //     }
+  //   }
+  // }
+  
+  Future<String?> _processAndUploadImage(File? image) async {
+  if (image != null) {
+    // Call the function to upload the image to Firebase Storage
+    String? downloadURL = await uploadImageToFirebaseStorage(image);
+    return downloadURL; // Return the download URL
+  }
+  return null; // Return null if the image is null
+}
+
+ 
+//}
+//my code ends
+
   @override
   Widget build(BuildContext context) {
+  
     return Scaffold(
       appBar: CustomAppBar(),
       body: Stack(
@@ -74,6 +143,7 @@ class _UploadScreen extends State<UploadScreen> {
     );
   }
 }
+
 
 class UploadText extends StatelessWidget {
   const UploadText({super.key});
