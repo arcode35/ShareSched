@@ -302,7 +302,6 @@ class LoginButton extends StatelessWidget {
       minWidth: 300,
       height: 52,
       onPressed: () async{
-        dynamic result = await _auth.signInWithEmailAndPassword(email, password);
         buttonPressed();
         Navigator.push(
             context,

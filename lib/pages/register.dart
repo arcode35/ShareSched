@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:myapp/models/user.dart';
 import 'package:myapp/models/user_model.dart';
 import 'package:myapp/repositories/user_respository.dart';
 import 'package:myapp/services/auth.dart';
+import 'package:myapp/services/controllers/register_controller.dart';
 import 'custom_widgets.dart';
 
 import 'package:myapp/pages/upload_schedule.dart';
@@ -94,16 +94,23 @@ class _RegisterFormState extends State<RegisterForm> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  void onSignUpButtonPressed() {
+  void onSignUpButtonPressed() async{
     final AuthService _auth = AuthService();
+    final registerRepo = Get.put(RegisterController());
     // save registration details to database here?
-    String email = emailController.text;
-    String username = usernameController.text;
-    String password = passwordController.text;
-    dynamic result = await _auth.registerWithEmailAndPassword(email, password);
-    print("Email: $email");
-    print("Username: $username");
-    print("Password: $password");
+    String email1 = emailController.text;
+    String username1 = usernameController.text;
+    String password1 = passwordController.text;
+    dynamic result = await _auth.registerWithEmailAndPassword(email1, password1);
+
+    final user = UserModel(
+      email: email1, 
+      password: password1,
+      );
+    await registerRepo.createUser(user);
+    print("Email: $email1");
+    print("Username: $username1");
+    print("Password: $password1");
   }
 
   Widget build(BuildContext context) {
@@ -389,15 +396,7 @@ class SignUpButton extends StatelessWidget {
     return MaterialButton(
       minWidth: 335,
       height: 52,
-      onPressed: () async{
-        await user.add({
-            email: email,
-            password: password, 
-            //fullName: 
-        }).then((value) => print("User Added"));
-          // print(email); // Access the email parameter
-          // print(password); // Access the password parameter
-          dynamic result = await _auth.registerWithEmailAndPassword(email, password);
+      onPressed: (){
         buttonPressed();
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => UploadScreen()));
