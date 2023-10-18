@@ -104,6 +104,7 @@ class _RegisterFormState extends State<RegisterForm> {
     dynamic result = await _auth.registerWithEmailAndPassword(email1, password1);
 
     final user = UserModel(
+      fullName: username1,
       email: email1, 
       password: password1,
       );
