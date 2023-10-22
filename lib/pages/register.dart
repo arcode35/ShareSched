@@ -310,6 +310,35 @@ class UsernameField extends StatelessWidget {
   }
 }
 
+
+// class PasswordField extends StatelessWidget {
+//   const PasswordField({super.key});
+//   String password = ' ';
+//   @override
+//   Widget build(BuildContext context) {
+//     return Padding(
+//       padding: const EdgeInsets.symmetric(horizontal: 35),
+//       child: TextFormField(
+//         keyboardType: TextInputType.visiblePassword,
+//         decoration: InputDecoration(
+//           labelText: "Password",
+//           hintText: 'Enter password',
+//           hintStyle: GoogleFonts.montserrat(),
+//           labelStyle: GoogleFonts.montserrat(),
+//           prefixIcon: const Icon(Icons.password),
+//           border: const OutlineInputBorder(),
+//         ),
+//         onChanged: (String Value) {
+//           // setState(() => password = val);
+//         },
+//         validator: (value) {
+//           return value!.isEmpty ? 'Please Enter Password' : null;
+//         },
+//       ),
+//     );
+//   }
+// }
+
 class PasswordField extends StatelessWidget {
   TextEditingController controller = TextEditingController();
 
@@ -378,6 +407,28 @@ class PasswordField extends StatelessWidget {
   }
 }
 
+
+
+// class SignUpButton extends StatelessWidget {
+//   const SignUpButton({super.key});
+//   @override
+//   Widget build(BuildContext context) {
+//     return Padding(
+//       padding: const EdgeInsets.symmetric(horizontal: 100),
+//       child: MaterialButton(
+//         minWidth: double.infinity,
+//         onPressed: () async {
+//           print(email);
+//           print(password);
+//         },
+//         color: Colors.black,
+//         textColor: Colors.white,
+//         child: Text('Sign Up',
+//             style: GoogleFonts.exo(fontSize: 20, color: Colors.white)),
+//       ),
+//     );
+//   }
+// }
 
 class SignUpButton extends StatelessWidget {
   const SignUpButton({required this.buttonPressed});

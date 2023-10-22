@@ -1,8 +1,15 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/services/upload_image.dart';
 import 'custom_widgets.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
+//import 'package:google_ml_kit/google_ml_kit.dart';
+import 'package:firebase_ml_vision/firebase_ml_vision.dart';
+import 'package:logger/logger.dart';
+
 
 class UploadScreen extends StatefulWidget {
   @override
@@ -10,8 +17,15 @@ class UploadScreen extends StatefulWidget {
 }
 
 class _UploadScreen extends State<UploadScreen> {
+  
+  final TextRecognizer textRecognizer = FirebaseVision.instance.textRecognizer();
+  final logger = Logger();
   final ImagePicker picker = ImagePicker();
   File? _image;
+    bool textScanning = false;
+    
+  String scannedText = "";
+
 
   Future<void> takeImage() async {
     final XFile? photo = await picker.pickImage(source: ImageSource.camera);
@@ -19,17 +33,43 @@ class _UploadScreen extends State<UploadScreen> {
       setState(() {
         _image = File(photo.path);
       });
+      //process image
     }
   }
 
   Future<void> uploadImage() async {
     final XFile? photo = await picker.pickImage(source: ImageSource.gallery);
+    Uint8List? bytes = await photo?.readAsBytes();
     if (photo != null) {
+      textScanning = true;
       setState(() {
         _image = File(photo.path);
       });
+      //process image
+      String resp = await StoreData().uploadImageToStorage('sched.png', bytes );
+         _processImage();
     }
   }
+
+   Future<void> _processImage() async {
+    //final inputImage = InputImage.fromFilePath(image.path);
+
+     final FirebaseVisionImage visionImage = FirebaseVisionImage.fromFile(File(r"C:file path"));
+    final VisionText visionText = await textRecognizer.processImage(visionImage);
+     //print("Processing image...");
+     logger.d('Debug message');
+      for (TextBlock block in visionText.blocks) {
+      for (TextLine line in block.lines) {
+        for (TextElement element in line.elements) {
+            logger.d(element.text); // Access recognized text
+        }
+      }
+    }
+  }
+ 
+
+  
+  
 
   @override
   Widget build(BuildContext context) {
@@ -65,6 +105,7 @@ class _UploadScreen extends State<UploadScreen> {
                     width: 20,
                   ),
                   UploadButton(buttonPressed: uploadImage),
+
                 ],
               )
             ],
@@ -73,8 +114,8 @@ class _UploadScreen extends State<UploadScreen> {
       ),
     );
   }
-}
 
+}
 class UploadText extends StatelessWidget {
   const UploadText({super.key});
   @override

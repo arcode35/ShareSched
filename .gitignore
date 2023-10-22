@@ -9,6 +9,9 @@
 .history
 .svn/
 migrate_working_dir/
+# Hide key from version control
+lib/firebase_options.dart
+
 
 # IntelliJ related
 *.iml

@@ -289,6 +289,24 @@ class PasswordField extends StatelessWidget {
 //   }
 // }
 
+// class LoginButton extends StatelessWidget {
+//   const LoginButton({super.key});
+//   @override
+//   Widget build(BuildContext context) {
+//     return Padding(
+//       padding: const EdgeInsets.symmetric(horizontal: 100),
+//       child: MaterialButton(
+//         minWidth: double.infinity,
+//         onPressed: () {},
+//         color: Colors.black,
+//         textColor: Colors.white,
+//         child: Text('Log In',
+//             style: GoogleFonts.exo(fontSize: 20, color: Colors.white)),
+//       ),
+//     );
+//   }
+// }
+
 class LoginButton extends StatelessWidget {
 
 

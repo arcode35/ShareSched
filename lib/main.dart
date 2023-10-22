@@ -24,16 +24,68 @@ Future <void> main() async {
     persistenceEnabled: true, // Enable local persistence
     // Add more settings as needed
   );
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+// class UploadPic extends StatefulWidget {
+//   const UploadPic({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: WelcomeScreen(),
-    );
-  }
-}
+//   @override
+//   State<UploadPic> createState() => uploadpic();
+// }
+
+// class uploadpic extends State<UploadPic> {
+
+//   File? imageFile;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: WelcomeScreen(),
+//     );
+//   }
+
+//   void getImage({required ImageSource source}) async {
+
+//     final file = await ImagePicker().pickImage(
+//         source: source,
+//         maxWidth: 640,
+//         maxHeight: 480,
+//         imageQuality: 70 //0 - 100
+//     );
+
+//     if(file?.path != null){
+//       setState(() {
+//         imageFile = File(file!.path);
+//       });
+//   }
+//   }
+//   void getImage({required ImageSource source}) async {
+//   final file = await ImagePicker().pickImage(
+//     source: source,
+//     maxWidth: 640,
+//     maxHeight: 480,
+//     imageQuality: 70,
+//   );
+
+//   if (file?.path != null) {
+//     setState(() {
+//       imageFile = File(file!.path);
+//     });
+
+//     if (imageFile != null) {
+//       final Uint8List imageBytes = await imageFile!.readAsBytes();
+//       final String uid = '3NKynT1nH0jmfJvcn50N'; // Replace with the user's unique ID
+
+//       try {
+//         final String imageUrl = await uploadImage(imageBytes, uid);
+//         // You can use imageUrl for further processing or storage reference.
+//       } catch (error) {
+//         // Handle any errors that occur during image upload.
+//         print('Error uploading image: $error');
+//       }
+//     }
+//   }
+// }
+
+//}
