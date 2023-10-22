@@ -24,42 +24,42 @@ Future <void> main() async {
     persistenceEnabled: true, // Enable local persistence
     // Add more settings as needed
   );
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
-class UploadPic extends StatefulWidget {
-  const UploadPic({Key? key}) : super(key: key);
+// class UploadPic extends StatefulWidget {
+//   const UploadPic({Key? key}) : super(key: key);
 
-  @override
-  State<UploadPic> createState() => uploadpic();
-}
+//   @override
+//   State<UploadPic> createState() => uploadpic();
+// }
 
-class uploadpic extends State<UploadPic> {
+// class uploadpic extends State<UploadPic> {
 
-  File? imageFile;
+//   File? imageFile;
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: WelcomeScreen(),
-    );
-  }
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: WelcomeScreen(),
+//     );
+//   }
 
-  void getImage({required ImageSource source}) async {
+//   void getImage({required ImageSource source}) async {
 
-    final file = await ImagePicker().pickImage(
-        source: source,
-        maxWidth: 640,
-        maxHeight: 480,
-        imageQuality: 70 //0 - 100
-    );
+//     final file = await ImagePicker().pickImage(
+//         source: source,
+//         maxWidth: 640,
+//         maxHeight: 480,
+//         imageQuality: 70 //0 - 100
+//     );
 
-    if(file?.path != null){
-      setState(() {
-        imageFile = File(file!.path);
-      });
-    }
-  }
+//     if(file?.path != null){
+//       setState(() {
+//         imageFile = File(file!.path);
+//       });
+//   }
+//   }
 //   void getImage({required ImageSource source}) async {
 //   final file = await ImagePicker().pickImage(
 //     source: source,
@@ -88,4 +88,4 @@ class uploadpic extends State<UploadPic> {
 //   }
 // }
 
-}
+//}
