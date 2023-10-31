@@ -41,6 +41,8 @@ dependencies:
   firebase_auth: ^4.10.0
   cloud_firestore: ^4.9.2
   get: ^4.6.6
+  http: ^1.1.0
+  intl: ^0.17.0
 
   time_planner:
     git:

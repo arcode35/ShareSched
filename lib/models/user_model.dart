@@ -8,7 +8,6 @@ class UserModel {
 
   const UserModel({
     //required this.id,
-
     required this.fullName,
     required this.email,
     required this.password,

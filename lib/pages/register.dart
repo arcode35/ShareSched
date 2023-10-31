@@ -108,12 +108,14 @@ class _RegisterFormState extends State<RegisterForm> {
       email: email1, 
       password: password1,
       );
-    await registerRepo.createUser(user);
+    if(user.fullName != "" && user.email != "" && user.password != ""){
+      await registerRepo.createUser(user);
+    }
     print("Email: $email1");
     print("Username: $username1");
     print("Password: $password1");
   }
-
+  
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,

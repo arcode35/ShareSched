@@ -248,6 +248,12 @@
       "languageVersion": "2.19"
     },
     {
+      "name": "intl",
+      "rootUri": "file:///C:/Users/noele/AppData/Local/Pub/Cache/hosted/pub.dev/intl-0.17.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "js",
       "rootUri": "file:///C:/Users/noele/AppData/Local/Pub/Cache/hosted/pub.dev/js-0.6.7",
       "packageUri": "lib/",
@@ -422,7 +428,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-10-14T23:59:03.190Z",
+  "generated": "2023-10-31T06:20:42.629996Z",
   "generator": "pub",
   "generatorVersion": "3.1.2"
 }
