@@ -7,8 +7,9 @@ import 'custom_widgets.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 //import 'package:google_ml_kit/google_ml_kit.dart';
-import 'package:firebase_ml_vision/firebase_ml_vision.dart';
+//import 'package:firebase_ml_vision/firebase_ml_vision.dart';
 import 'package:logger/logger.dart';
+//import 'package:ShareSched/functions/index.js;
 
 
 class UploadScreen extends StatefulWidget {
@@ -18,7 +19,7 @@ class UploadScreen extends StatefulWidget {
 
 class _UploadScreen extends State<UploadScreen> {
   
-  final TextRecognizer textRecognizer = FirebaseVision.instance.textRecognizer();
+  //inal TextRecognizer textRecognizer = FirebaseVision.instance.textRecognizer();
   final logger = Logger();
   final ImagePicker picker = ImagePicker();
   File? _image;
@@ -47,25 +48,26 @@ class _UploadScreen extends State<UploadScreen> {
       });
       //process image
       String resp = await StoreData().uploadImageToStorage('sched.png', bytes );
-         _processImage();
+
+         //_processImage();
     }
   }
 
-   Future<void> _processImage() async {
-    //final inputImage = InputImage.fromFilePath(image.path);
+  //  Future<void> _processImage() async {
+  //   //final inputImage = InputImage.fromFilePath(image.path);
 
-     final FirebaseVisionImage visionImage = FirebaseVisionImage.fromFile(File(r"C:file path"));
-    final VisionText visionText = await textRecognizer.processImage(visionImage);
-     //print("Processing image...");
-     logger.d('Debug message');
-      for (TextBlock block in visionText.blocks) {
-      for (TextLine line in block.lines) {
-        for (TextElement element in line.elements) {
-            logger.d(element.text); // Access recognized text
-        }
-      }
-    }
-  }
+  //    final FirebaseVisionImage visionImage = FirebaseVisionImage.fromFile(File(r"C:file path"));
+  //   final VisionText visionText = await textRecognizer.processImage(visionImage);
+  //    //print("Processing image...");
+  //    logger.d('Debug message');
+  //     for (TextBlock block in visionText.blocks) {
+  //     for (TextLine line in block.lines) {
+  //       for (TextElement element in line.elements) {
+  //           logger.d(element.text); // Access recognized text
+  //       }
+  //     }
+  //   }
+  // }
  
 
   

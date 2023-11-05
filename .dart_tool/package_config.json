@@ -146,12 +146,6 @@
       "languageVersion": "2.18"
     },
     {
-      "name": "firebase_ml_vision",
-      "rootUri": "file:///C:/Users/nadee/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_ml_vision-0.12.0+3",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "firebase_storage",
       "rootUri": "file:///C:/Users/nadee/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_storage-11.2.8",
       "packageUri": "lib/",
@@ -542,7 +536,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-10-22T19:48:14.886465Z",
+  "generated": "2023-11-04T03:01:14.365020Z",
   "generator": "pub",
   "generatorVersion": "3.1.2"
 }
