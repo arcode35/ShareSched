@@ -8,9 +8,13 @@ class UserRepository extends GetxController {
   static UserRepository get instance => Get.find();
 
   final _db = FirebaseFirestore.instance;
+  final newDocRef = DocumentReference;
 
   createUser(UserModel user) async {
-    await _db.collection("Users").add(user.toJson());
+    DocumentReference newDocRef = await _db.collection("Users").add(user.toJson());
+    print(newDocRef.id);
+    //FirebaseFirestore.instance.collection('Users').add(user.toJson());
+    //await _db.collection("Users").add(user.toJson());
     // .whenComplete(
     //   () => Get.snackbar("Success", "Your account has been created.",
     //       snackPosition: SnackPosition.BOTTOM,

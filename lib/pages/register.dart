@@ -101,16 +101,18 @@ class _RegisterFormState extends State<RegisterForm> {
     String email1 = emailController.text;
     String username1 = usernameController.text;
     String password1 = passwordController.text;
-    dynamic result = await _auth.registerWithEmailAndPassword(email1, password1);
 
     final user = UserModel(
-      fullName: username1,
+      username: username1,
       email: email1, 
       password: password1,
       );
-    if(user.fullName != "" && user.email != "" && user.password != ""){
+    if(user.username != "" && user.email != "" && user.password != ""){
       await registerRepo.createUser(user);
     }
+    dynamic result = await _auth.registerWithEmailAndPassword(email1,password1);
+    //const ref = this.db.collection('Users');
+    //ref.valueChanges({idField: 'customIdName'});
     print("Email: $email1");
     print("Username: $username1");
     print("Password: $password1");
