@@ -46,6 +46,8 @@ class _UploadScreen extends State<UploadScreen> {
       setState(() {
         _image = File(photo.path);
       });
+
+      
       //process image
       String resp = await StoreData().uploadImageToStorage('sched.png', bytes );
 

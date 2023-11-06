@@ -23,11 +23,14 @@
 import functions, { logger } from 'firebase-functions';
 import vision from '@google-cloud/vision';
 import admin from 'firebase-admin';
+//import addReceipt from '../lib/services/firestore_courses.dart';
+//import firestore from '../lib/services/firestore.js'
+
 
 
 //console.log("Hello World");
-
-//admin.initializeApp();
+export const COURSE_COLLECTION = 'courses';
+admin.initializeApp();
 
 export const uploadstudentsched = functions.storage.object().onFinalize(async (object) => {
 
@@ -39,9 +42,9 @@ export const uploadstudentsched = functions.storage.object().onFinalize(async (o
   const text = annotation ? annotation.description: '';
 
   
-  logger.log("hello world");
+  //logger.log("hello world");
   logger.log(text);
-  logger.log("new line");
+  // logger.log("new line");
 //parse text in the form XX-XXXX-XXX
 const regex = /([A-Za-z]+)-(\d+)-(\d+)/; 
 
@@ -50,6 +53,16 @@ const lines = text.split('\n');
 for (const line of lines) {
   const match = line.match(regex);
   if (match) {
+// Store data into Firestore
+    const course = {
+      course: match[1], 
+      number: match[2],
+      section: match[3],
+    };
+  
+    admin.firestore().collection(COURSE_COLLECTION).add(course);
+    
+    //print out each match
     console.log(match[1]); // Prefix
     console.log(match[2]); // First code number
     console.log(match[3]); // Second code number
