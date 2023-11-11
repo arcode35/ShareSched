@@ -13,6 +13,7 @@ class ClassModel {
 
 
 
+
   const ClassModel({
     required this.subjectPrefix,
     required this.courseNumber,

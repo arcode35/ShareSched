@@ -113,6 +113,7 @@ class _RegisterFormState extends State<RegisterForm> {
     dynamic result = await _auth.registerWithEmailAndPassword(email1,password1);
     //const ref = this.db.collection('Users');
     //ref.valueChanges({idField: 'customIdName'});
+    //print(registerRepo.getUserDocId());
     print("Email: $email1");
     print("Username: $username1");
     print("Password: $password1");

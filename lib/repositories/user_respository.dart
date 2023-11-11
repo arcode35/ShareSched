@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:myapp/models/user.dart';
 import 'package:myapp/models/user_model.dart';
 
+String userDocID = "";
 class UserRepository extends GetxController {
   static UserRepository get instance => Get.find();
 
@@ -12,6 +13,7 @@ class UserRepository extends GetxController {
 
   createUser(UserModel user) async {
     DocumentReference newDocRef = await _db.collection("Users").add(user.toJson());
+    userDocID = newDocRef.id;
     print(newDocRef.id);
     //FirebaseFirestore.instance.collection('Users').add(user.toJson());
     //await _db.collection("Users").add(user.toJson());
@@ -31,5 +33,13 @@ class UserRepository extends GetxController {
     //   print(error.toString());
     // });
   
+  }
+
+  // Future<UserModel> getUser(String uid) async {
+  //   var doc = await _db.collection("Users").doc(uid).get();;
+  // }
+
+  Future<String> getUserDocId() async{
+    return userDocID;
   }
 }
