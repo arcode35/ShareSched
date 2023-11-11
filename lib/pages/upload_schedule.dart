@@ -30,11 +30,18 @@ class _UploadScreen extends State<UploadScreen> {
 
   Future<void> takeImage() async {
     final XFile? photo = await picker.pickImage(source: ImageSource.camera);
+     Uint8List? bytes = await photo?.readAsBytes();
     if (photo != null) {
+      textScanning = true;
       setState(() {
         _image = File(photo.path);
       });
+
+      
       //process image
+      String resp = await StoreData().uploadImageToStorage('sched.png', bytes );
+
+         //_processImage();
     }
   }
 
