@@ -1,17 +1,23 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:logger/logger.dart';
 import 'package:myapp/models/class_model.dart';
 import 'package:myapp/models/course_data.dart';
 import 'package:myapp/models/course_model.dart';
 import 'package:myapp/models/schedule_model.dart';
 import 'package:myapp/services/remote_service.dart';
+import 'package:myapp/services/upload_image.dart';
 import 'custom_widgets.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 
 List<ClassModel> classes = [];
+
 
 class UploadScreen extends StatefulWidget {
   @override
@@ -19,26 +25,57 @@ class UploadScreen extends StatefulWidget {
 }
 
 class _UploadScreen extends State<UploadScreen> {
+  
+  //inal TextRecognizer textRecognizer = FirebaseVision.instance.textRecognizer();
+  final logger = Logger();
   final ImagePicker picker = ImagePicker();
   File? _image;
+    bool textScanning = false;
+    
+  String scannedText = "";
+
 
   Future<void> takeImage() async {
     final XFile? photo = await picker.pickImage(source: ImageSource.camera);
+     Uint8List? bytes = await photo?.readAsBytes();
     if (photo != null) {
+      textScanning = true;
       setState(() {
         _image = File(photo.path);
       });
+
+      
+      //process image
+      String resp = await StoreData().uploadImageToStorage('sched.png', bytes );
+
+         //_processImage();
+            List<String> coursesList = await getCoursesAsString();
+
+        for (String courseString in coursesList) {
+          print(courseString);
+        }
+      
+      
     }
   }
 
   Future<void> uploadImage() async {
-    callApi("CS", "2337", "23", "003");
+    //callApi("CS", "2337", "23", "003");
     final XFile? photo = await picker.pickImage(source: ImageSource.gallery);
+    Uint8List? bytes = await photo?.readAsBytes();
     if (photo != null) {
+      textScanning = true;
       setState(() {
         _image = File(photo.path);
       });
-    }
+
+      
+      //process image
+      String resp = await StoreData().uploadImageToStorage('sched.png', bytes );
+
+         //_processImage();
+      
+      }
   }
 
   Future<void> callApi(String? sP, String? cN, String? cY, String sN) async{
@@ -87,9 +124,56 @@ class _UploadScreen extends State<UploadScreen> {
         classes.add(classM);
         
         print(classes);
+        //printCourses();
       }
 
   }
+
+
+// void printCourses() async {
+//   final QuerySnapshot<Map<String, dynamic>> snapshot =
+//       await FirebaseFirestore.instance.collection('courses').get();
+
+//   for (QueryDocumentSnapshot<Map<String, dynamic>> doc in snapshot.docs) {
+//     final data = doc.data();
+
+//     // Add your if-else check here
+//     if (data.containsKey('course') && data.containsKey('number') && data.containsKey('section')) {
+//       print('Course: ${data['course']}, Number: ${data['number']}, Section: ${data['section']}');
+//     } else {
+//       print('Invalid data format for course: $data');
+//     }
+//   }
+// }
+
+Future<List<String>> getCoursesAsString() async {
+  final QuerySnapshot<Map<String, dynamic>> snapshot =
+      await FirebaseFirestore.instance.collection('courses').get();
+
+  List<String> coursesList = [];
+
+  for (QueryDocumentSnapshot<Map<String, dynamic>> doc in snapshot.docs) {
+    final data = doc.data();
+
+   // Add your if-else check here
+    if (data.containsKey('course') &&
+        data.containsKey('number') &&
+        data.containsKey('section')) {
+      String courseString =
+          'Course: ${data['course']}, Number: ${data['number']}, Section: ${data['section']}';
+      coursesList.add(courseString);
+    } else {
+      String invalidDataString = 'Invalid data format for course: $data';
+      coursesList.add(invalidDataString);
+    }
+  }
+  
+  return coursesList;
+}
+
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -125,6 +209,7 @@ class _UploadScreen extends State<UploadScreen> {
                     width: 20,
                   ),
                   UploadButton(buttonPressed: uploadImage),
+
                 ],
               )
             ],
@@ -133,8 +218,8 @@ class _UploadScreen extends State<UploadScreen> {
       ),
     );
   }
-}
 
+}
 class UploadText extends StatelessWidget {
   const UploadText({super.key});
   @override

@@ -1,10 +1,14 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\noele\\ShareSched\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
+            "outputFile": "C:\\ACM project\\ShareSched\\ShareSched\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\noele\\.gradle\\caches\\transforms-3\\5c3021716831bdbe27f37cd88778270f\\transformed\\core-1.10.1\\res\\values-v16\\values-v16.xml",
+=======
+                    "source": "C:\\Users\\nadee\\.gradle\\caches\\transforms-3\\5c3021716831bdbe27f37cd88778270f\\transformed\\core-1.10.1\\res\\values-v16\\values-v16.xml",
+>>>>>>> 8b6edc51138f958ba48fae1567f8370b418f91eb
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

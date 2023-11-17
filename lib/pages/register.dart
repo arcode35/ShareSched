@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+
+import 'package:myapp/models/user.dart';
 import 'package:myapp/models/user_model.dart';
 import 'package:myapp/repositories/user_respository.dart';
 import 'package:myapp/services/auth.dart';

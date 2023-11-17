@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 #Tue Oct 31 01:15:33 CDT 2023
 base.0=C\:\\Users\\noele\\ShareSched\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 base.1=C\:\\Users\\noele\\ShareSched\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex
 base.2=C\:\\Users\\noele\\ShareSched\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes3.dex
+=======
+#Mon Oct 16 22:26:48 CDT 2023
+base.0=C\:\\ACM project\\ShareSched\\ShareSched\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+base.1=C\:\\ACM project\\ShareSched\\ShareSched\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex
+base.2=C\:\\ACM project\\ShareSched\\ShareSched\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes3.dex
+>>>>>>> 8b6edc51138f958ba48fae1567f8370b418f91eb
 path.0=classes.dex
 path.1=classes2.dex
 path.2=classes3.dex

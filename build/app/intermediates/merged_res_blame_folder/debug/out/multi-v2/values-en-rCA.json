@@ -1,9 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\noele\\ShareSched\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rCA\\values-en-rCA.xml",
+            "outputFile": "C:\\ACM project\\ShareSched\\ShareSched\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rCA\\values-en-rCA.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\noele\\.gradle\\caches\\transforms-3\\5c3021716831bdbe27f37cd88778270f\\transformed\\core-1.10.1\\res\\values-en-rCA\\values-en-rCA.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -23,6 +24,10 @@
                 {
                     "source": "C:\\Users\\noele\\.gradle\\caches\\transforms-3\\cd3a5b5b625ea423d9d536a71316b131\\transformed\\browser-1.4.0\\res\\values-en-rCA\\values-en-rCA.xml",
                     "from": {
+=======
+                    "source": "C:\\Users\\nadee\\.gradle\\caches\\transforms-3\\cd3a5b5b625ea423d9d536a71316b131\\transformed\\browser-1.4.0\\res\\values-en-rCA\\values-en-rCA.xml",
+                    "from": {
+>>>>>>> 8b6edc51138f958ba48fae1567f8370b418f91eb
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
                         "startOffsets": "55,153,250,359",
@@ -35,6 +40,26 @@
                         "startOffsets": "773,871,968,1077",
                         "endColumns": "97,96,108,98",
                         "endOffsets": "866,963,1072,1171"
+<<<<<<< HEAD
+=======
+                    }
+                },
+                {
+                    "source": "C:\\Users\\nadee\\.gradle\\caches\\transforms-3\\5c3021716831bdbe27f37cd88778270f\\transformed\\core-1.10.1\\res\\values-en-rCA\\values-en-rCA.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,151,253,352,451,555,657,773",
+                        "endColumns": "95,101,98,98,103,101,115,100",
+                        "endOffsets": "146,248,347,446,550,652,768,869"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,13",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,151,253,352,451,555,657,1176",
+                        "endColumns": "95,101,98,98,103,101,115,100",
+                        "endOffsets": "146,248,347,446,550,652,768,1272"
+>>>>>>> 8b6edc51138f958ba48fae1567f8370b418f91eb
                     }
                 }
             ]

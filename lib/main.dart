@@ -24,11 +24,11 @@ Future <void> main() async {
     persistenceEnabled: true, // Enable local persistence
     // Add more settings as needed
   );
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+// class UploadPic extends StatefulWidget {
+//   const UploadPic({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,4 +36,4 @@ class MyApp extends StatelessWidget {
       home: WelcomeScreen(),
     );
   }
-}
+
