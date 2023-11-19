@@ -1,12 +1,14 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'firebase_options.dart';
 import 'pages/welcome.dart';
 
-import 'package:myapp/firebase_options.dart';
 import 'package:myapp/pages/custom_widgets.dart';
 import 'package:myapp/pages/wrapper.dart';
 import 'pages/login.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+
+//import 'package:myapp/firebase_options.dart'; // Commented out for now
 
 Future <void> main() async {
   Paint.enableDithering = true;

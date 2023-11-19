@@ -14,6 +14,7 @@ import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:myapp/repositories/user_respository.dart';
 
 
 List<ClassModel> classes = [];
@@ -68,6 +69,9 @@ class _UploadScreen extends State<UploadScreen> {
       setState(() {
         _image = File(photo.path);
       });
+
+      // String id = await UserRepository.instance.getUserDocId();
+      // print(id);
 
       
       //process image

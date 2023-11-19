@@ -15,25 +15,9 @@ class UserRepository extends GetxController {
     DocumentReference newDocRef = await _db.collection("Users").add(user.toJson());
     userDocID = newDocRef.id;
     print(newDocRef.id);
-    //FirebaseFirestore.instance.collection('Users').add(user.toJson());
-    //await _db.collection("Users").add(user.toJson());
-    // .whenComplete(
-    //   () => Get.snackbar("Success", "Your account has been created.",
-    //       snackPosition: SnackPosition.BOTTOM,
-    //       backgroundColor: Colors.green.withOpacity(0.1),
-    //       colorText: Colors.green),
-    //   )
     
-    // .catchError((error, stackTrace) {
-    //   Get.snackbar("Error", "Something went wrong. Try Again",
-    //     snackPosition: SnackPosition.BOTTOM,
-    //     backgroundColor: Colors.redAccent.withOpacity(0.1),
-    //     colorText: Colors.red);
-
-    //   print(error.toString());
-    // });
-  
   }
+
 
   // Future<UserModel> getUser(String uid) async {
   //   var doc = await _db.collection("Users").doc(uid).get();;
