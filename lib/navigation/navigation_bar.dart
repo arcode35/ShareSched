@@ -18,7 +18,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
   final Screens = [
     const HomeScreen(),
     FriendScreen(),
-    const QRScreen(),
+    const QrPage(),
   ];
   @override
   Widget build(BuildContext context) {

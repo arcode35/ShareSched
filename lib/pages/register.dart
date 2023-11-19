@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+
 import 'package:myapp/models/user.dart';
 import 'package:myapp/models/user_model.dart';
 import 'package:myapp/repositories/user_respository.dart';
 import 'package:myapp/services/auth.dart';
+import 'package:myapp/services/controllers/register_controller.dart';
 import 'custom_widgets.dart';
 
 import 'package:myapp/pages/upload_schedule.dart';
@@ -96,16 +98,29 @@ class _RegisterFormState extends State<RegisterForm> {
   final TextEditingController passwordController = TextEditingController();
   void onSignUpButtonPressed() async{
     final AuthService _auth = AuthService();
+    final registerRepo = Get.put(RegisterController());
     // save registration details to database here?
-    String email = emailController.text;
-    String username = usernameController.text;
-    String password = passwordController.text;
-    dynamic result = await _auth.registerWithEmailAndPassword(email, password);
-    print("Email: $email");
-    print("Username: $username");
-    print("Password: $password");
-  }
+    String email1 = emailController.text;
+    String username1 = usernameController.text;
+    String password1 = passwordController.text;
 
+    final user = UserModel(
+      username: username1,
+      email: email1, 
+      password: password1,
+      );
+    if(user.username != "" && user.email != "" && user.password != ""){
+      await registerRepo.createUser(user);
+    }
+    dynamic result = await _auth.registerWithEmailAndPassword(email1,password1);
+    //const ref = this.db.collection('Users');
+    //ref.valueChanges({idField: 'customIdName'});
+    //print(registerRepo.getUserDocId());
+    print("Email: $email1");
+    print("Username: $username1");
+    print("Password: $password1");
+  }
+  
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,

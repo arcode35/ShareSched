@@ -1,22 +1,23 @@
 class UserModel {
-  final String? id;
-  //final String fullName;
+  //final String? id;
+  final String? uid;
+  final String username;
   final String email;
   final String password;
 
 
 
   const UserModel({
-    required this.id,
-
-   // required this.fullName,
+    //required this.id,
+    this.uid,
+    required this.username,
     required this.email,
     required this.password,
   });
 
   toJson(){
     return{
-    //  "FullName": fullName,
+      "Username": username,
       "Email": email,
       "Password": password,
     };

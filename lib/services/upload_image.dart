@@ -6,7 +6,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 
 //final FirebaseStorage _storage = FirebaseStorage.instance;
 // Get a non-default Storage bucket
-final _storage = FirebaseStorage.instanceFor(bucket: "");
+final _storage = FirebaseStorage.instanceFor(bucket: "gs://flutter-sharesched.appspot.com");
 // Create a storage reference from our app
 //final storageRef = FirebaseStorage.instance.ref();
 final FirebaseFirestore _firestore = FirebaseFirestore.instance;
