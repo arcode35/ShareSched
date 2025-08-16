@@ -2,9 +2,9 @@
 
 ![Sharesched Logo](https://github.com/acm-projects/ShareSched/blob/main/assets/page-1/images/custom/logo.png?raw=true)
 
-Welcome to **Sharesched**, a collaborative scheduling app that won first place at the ACM Projects Fall 2023 presentation night! 
+Welcome to **Sharesched**, a collaborative scheduling app that won first place at the ACM Projects Fall 2023 presentation night! 🎉 
 
-🎉 I crafted all the visual content and led the UI/UX development, ensuring a sleek, modern, and intuitive experience.
+I crafted all the visual content and led the UI/UX development, ensuring a sleek, modern, and intuitive experience.
 
 ---
 
