@@ -1,4 +1,4 @@
-# 📅 Sharesched 
+# 📅 ShareSched 
 
 ![Sharesched Logo](https://github.com/acm-projects/ShareSched/blob/main/assets/page-1/images/custom/logo.png?raw=true)
 
@@ -14,6 +14,17 @@ Sharesched is an innovative app built for college students that extract key deta
 
 ---
 
+
+## 🔹 Logo Design
+
+![Sharesched Logo](https://github.com/acm-projects/ShareSched/blob/main/assets/page-1/images/custom/logo.png?raw=true)
+
+I custom designed the logo in Canva to reflect the app’s modern and streamlined aesthetic. Its key characteristics include:
+
+- **Sleek, rectangular shape** that conveys structure and organization, mirroring the app’s focus on scheduling.  
+- **Blue color palette**, chosen to evoke trust, reliability, and clarity.  
+- **Minimalist design**, ensuring recognizability and adaptability across platforms and UI components.  
+
 ## 🔹 Key Features
 
 ### Schedule Extraction
@@ -21,7 +32,7 @@ Sharesched is an innovative app built for college students that extract key deta
 - Extract key details to simplify planning.
 
 ### Collaborative Scheduling
-- Find schedule overlaps with friends (location, professor, etc.)
+- Find schedule overlaps with friends (location, professor, etc.) 
 - Real-time updates for team coordination
 - ![Collaborative Scheduling Screenshot](https://media.licdn.com/dms/image/v2/D562DAQGx3QFfZX-Lag/profile-treasury-image-shrink_1920_1920/profile-treasury-image-shrink_1920_1920/0/1701401362380?e=1755982800&v=beta&t=LmKbdToDPIPMcF6TVK9MN5EQ01mq9CgtCQP3ytYKIYA)
 
