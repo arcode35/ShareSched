@@ -2,13 +2,15 @@
 
 ![Sharesched Logo](https://github.com/acm-projects/ShareSched/blob/main/assets/page-1/images/custom/logo.png?raw=true)
 
-Welcome to **Sharesched**, a collaborative scheduling app that won first place at the ACM Projects Fall 2023 presentation night! 🎉 Designed and implemented by a dedicated team, I crafted all the visual content and led the UI/UX development, ensuring a sleek, modern, and intuitive experience.
+Welcome to **Sharesched**, a collaborative scheduling app that won first place at the ACM Projects Fall 2023 presentation night! 
+
+🎉 I crafted all the visual content and led the UI/UX development, ensuring a sleek, modern, and intuitive experience.
 
 ---
 
 ## 🔹 About Sharesched
 
-Sharesched is an innovative app that allows users to upload a picture of a schedule and extract key details to simplify planning for you and your friends. Built in just ten weeks, this project showcases teamwork, perseverance, and technical excellence.
+Sharesched is an innovative app built for college students that extract key details from an academic schedule to simplify planning for you and your friends.
 
 ---
 
